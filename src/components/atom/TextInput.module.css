@@ -1,0 +1,25 @@
+.inputField {
+    background-color: var(--dark-default-bg);
+    border: 1px solid var(--dark-field-border);
+    min-height: var(--default-element-height);
+    padding: var(--default-padding-s) var(--default-padding);
+    flex-grow: 1;
+    resize: none;
+}
+
+.inputField:focus {
+    outline: 2px solid var(--dark-active);
+    border: 1px solid var(--dark-default-bg);
+    border-radius: var(--border-radius);
+}
+
+.inputField:disabled {
+    background-color: var(--dark-field-bg-disabled);
+    border: 1px solid var(--dark-field-border-disabled);
+}
+
+.inputField:invalid {
+    border: 1px solid var(--dark-default-bg);
+    outline: 2px solid var(--dark-text-error);
+    border-radius: var(--outline-border-radius);
+}

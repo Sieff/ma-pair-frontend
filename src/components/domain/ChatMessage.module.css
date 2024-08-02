@@ -1,0 +1,12 @@
+.userMessage {
+    padding: var(--default-padding-l);
+    background-color: var(--dark-field-bg);
+    border-radius: var(--border-radius-xl);
+    justify-self: end;
+}
+
+.userMessageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
