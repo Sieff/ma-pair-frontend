@@ -20,7 +20,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({message}) => {
 const UserMessage: React.FC<ChatMessageProps> = ({message}) => {
     return (
         <div className={styles.userMessageContainer}>
-            <div className={styles.userMessage}>{message.message}</div>
+            <div className={styles.userMessage}>
+                <p>
+                    {message.message}
+                </p>
+            </div>
         </div>
     )
 }

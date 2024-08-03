@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 1rem;
 
-    margin: var(--default-margin);
+    margin: var(--default-spacing);
 }
 
 .textInput {

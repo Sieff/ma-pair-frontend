@@ -46,7 +46,9 @@ export const MessagesContextProvider: React.FC<PropsWithChildren> = ({children})
                 {origin: MessageOrigin.USER, message: "hi"},
                 {origin: MessageOrigin.AGENT, message: "was geht brudi ich hab gerade gar nicht ma so viel zu tun ich bin jetzt echt weit mit dem client und der kommt gut voran"},
                 {origin: MessageOrigin.USER, message: "nmhby"},
-                {origin: MessageOrigin.AGENT, message: "## devnnn \n - erstens \n - zweitens \n askjldfhaklshfakljshdfkljahklajhkljashfkljahsfkljashflahsflhsdljafhaslfkjhasklfjhalkfjhaslkfhlkfhklafhlakhflkashflkasjhfkldsjhlkasjhf"},
+                {origin: MessageOrigin.AGENT, message: "## devnnn \n\n - erstens \n - zweitens \n\n askjldfhaklshfakljshdfkljahklajhkljashfkljahsfkljashflahsflhsdljafhaslfkjhasklfjhalkfjhaslkfhlkfhklafhlakhflkashflkasjhfkldsjhlkasjhf \n\n moin"},
+                {origin: MessageOrigin.USER, message: "Fehler bei der Kommunikation mit dem Agenten"},
+                {origin: MessageOrigin.AGENT, message: "Fehler bei der Kommunikation mit dem Agenten"},
             ])
         }
     }, [publishMessage]);

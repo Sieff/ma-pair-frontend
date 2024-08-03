@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    gap: var(--default-spacing);
+    padding: var(--default-spacing);
+}
+
+.message {
+    padding: var(--default-padding-l);
+    background-color: var(--dark-field-bg);
+    border-radius: var(--border-radius-xl) 0 var(--border-radius-xl) var(--border-radius-xl);
+    max-width: 62%;
+
+    overflow-wrap: break-word;
+
+    overflow-y: auto;
+}
+
+.avatar {
+    height: 128px;
+    width: 128px;
+}

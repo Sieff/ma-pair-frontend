@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ChatWindow from "./components/domain/chat/ChatWindow";
 import Widget from "./components/domain/widget/Widget";
+import {MessagesContextProvider} from "./context/MessagesContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MessagesContextProvider>
+        <RouterProvider router={router} />
+    </MessagesContextProvider>
   </React.StrictMode>
 );
 

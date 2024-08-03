@@ -7,8 +7,6 @@
     overflow-y: auto;
     scroll-behavior: smooth;
 
-
-
-    margin: var(--default-margin) 0 var(--default-margin) var(--default-margin);
-    padding-right: var(--default-margin);
+    margin: var(--default-spacing) 0 var(--default-spacing) var(--default-spacing);
+    padding-right: var(--default-spacing);
 }

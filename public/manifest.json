@@ -5,7 +5,7 @@
     {
       "src": "avatar-full.png",
       "type": "image/png",
-      "sizes": "636x652"
+      "sizes": "512x512"
     },
     {
       "src": "avatar-icon.png",

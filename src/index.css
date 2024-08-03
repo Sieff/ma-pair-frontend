@@ -20,7 +20,7 @@ body {
   --default-padding-l: 12px;
 
 
-  --default-margin: 1rem;
+  --default-spacing: 1rem;
 
   /* Color styles */
   --dark-default-bg: rgb(43, 45, 48);
@@ -325,6 +325,7 @@ h4 {
 p {
   font-size: 13px;
   line-height: 19px;
+  margin: 0;
 }
 
 p.medium {

@@ -1,7 +1,6 @@
 .markdownContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 3px;
 }
 
 .markdownContainer > *:first-child {
@@ -10,6 +9,10 @@
 
 .markdownContainer > * {
     overflow-wrap: anywhere;
+}
+
+.markdownContainer > *:last-child {
+    margin-bottom: 0;
 }
 
 .markdownContainer h1 {
