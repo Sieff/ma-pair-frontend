@@ -1,8 +1,8 @@
 import React, {useCallback, useState} from "react";
-import SendMessageService from "../../service/SendMessageService";
+import SendMessageService from "../../../service/SendMessageService";
 import styles from './ChatInput.module.css'
-import {TextInput} from "../atom/TextInput";
-import {Button} from "../atom/Button";
+import {TextInput} from "../../atom/TextInput";
+import {Button} from "../../atom/Button";
 
 const ChatInput: React.FC = () => {
     const sendMessageService = SendMessageService.instance;

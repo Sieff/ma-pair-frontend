@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styles from './ChatHistory.module.css'
 import ChatMessage from "./ChatMessage";
-import {MessagesContext} from "../../context/MessagesContext";
+import {MessagesContext} from "../../../context/MessagesContext";
 
 const ChatHistory: React.FC = () => {
     const {messages} = useContext(MessagesContext);

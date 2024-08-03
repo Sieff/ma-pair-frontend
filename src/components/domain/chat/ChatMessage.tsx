@@ -1,7 +1,7 @@
 import React from "react";
-import {ChatMessageModel, MessageOrigin} from "../../model/ChatMessageModel";
+import {ChatMessageModel, MessageOrigin} from "../../../model/ChatMessageModel";
 import styles from './ChatMessage.module.css';
-import MarkdownContainer from "../atom/MarkdownContainer";
+import MarkdownContainer from "../../atom/MarkdownContainer";
 
 interface ChatMessageProps {
     message: ChatMessageModel;
