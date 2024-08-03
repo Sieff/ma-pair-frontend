@@ -1,0 +1,102 @@
+.markdownContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3px;
+}
+
+.markdownContainer > *:first-child {
+    margin-top: 0;
+}
+
+.markdownContainer > * {
+    overflow-wrap: anywhere;
+}
+
+.markdownContainer h1 {
+    margin: 20px 0;
+}
+
+.markdownContainer h2 {
+    margin: 18px 0;
+}
+
+.markdownContainer h3 {
+    margin: 16px 0;
+}
+
+.markdownContainer h4 {
+    margin: 14px 0;
+}
+
+.markdownContainer h5 {
+    margin: 12px 0;
+}
+
+.markdownContainer h6 {
+    margin: 10px 0;
+}
+
+/* Text */
+.markdownContainer p {
+    margin: 10px 0;
+}
+
+.markdownContainer b, .markdownContainer strong {
+    margin: 2px 0;
+}
+
+.markdownContainer i, .markdownContainer em {
+    margin: 2px 0;
+}
+
+/* Blockquote */
+.markdownContainer blockquote {
+    margin: 20px 0;
+}
+
+/* Listen */
+.markdownContainer ul, .markdownContainer ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.markdownContainer li {
+    margin: 5px 0;
+}
+
+/* Code */
+.markdownContainer pre, .markdownContainer code {
+    margin: 10px 0;
+}
+
+/* Links */
+.markdownContainer a {
+    margin: 2px 0;
+}
+
+/* Bilder */
+.markdownContainer img {
+    margin: 10px 0;
+}
+
+/* Tabellen */
+.markdownContainer table {
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.markdownContainer th, .markdownContainer td {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Horizontale Linie */
+.markdownContainer hr {
+    margin: 20px 0;
+}
+
+/* Durchgestrichen */
+.markdownContainer s, .markdownContainer del {
+    margin: 2px 0;
+}

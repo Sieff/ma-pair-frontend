@@ -1,5 +1,5 @@
 import React, {PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {ChatMessageModel} from "../model/ChatMessageModel";
+import {ChatMessageModel, MessageOrigin} from "../model/ChatMessageModel";
 
 interface MessagesContextValue {
     messages: ChatMessageModel[];
@@ -41,6 +41,14 @@ export const MessagesContextProvider: React.FC<PropsWithChildren> = ({children})
     useEffect(() => {
         const _window = window as any;
         _window.setData = publishMessage;
+        _window.setDevMessages = () => {
+            setMessages([
+                {origin: MessageOrigin.USER, message: "hi"},
+                {origin: MessageOrigin.AGENT, message: "was geht brudi ich hab gerade gar nicht ma so viel zu tun ich bin jetzt echt weit mit dem client und der kommt gut voran"},
+                {origin: MessageOrigin.USER, message: "nmhby"},
+                {origin: MessageOrigin.AGENT, message: "## devnnn \n - erstens \n - zweitens \n askjldfhaklshfakljshdfkljahklajhkljashfkljahsfkljashflahsflhsdljafhaslfkjhasklfjhalkfjhaslkfhlkfhklafhlakhflkashflkasjhfkldsjhlkasjhf"},
+            ])
+        }
     }, [publishMessage]);
 
     return (<MessagesContext.Provider value={contextValue}>

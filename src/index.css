@@ -19,6 +19,9 @@ body {
   --default-padding: 6px;
   --default-padding-l: 12px;
 
+
+  --default-margin: 1rem;
+
   /* Color styles */
   --dark-default-bg: rgb(43, 45, 48);
   --dark-active: rgba(53, 116, 240, 1);
@@ -278,14 +281,13 @@ html, body, #root {
 
 /* For WebKit browsers */
 ::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
   width: 10px;
   height: 10px;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 2s ease-in;
 }
 
 ::-webkit-scrollbar:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.04);
 
 }
 
@@ -294,20 +296,13 @@ html, body, #root {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3); /* Adjust color and transparency */
-  width: 9px;
-  height: 9px;
+  background-color: rgba(255, 255, 255, 0.16); /* Adjust color and transparency */
+  border: 1px solid transparent;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 1rem;
 }
 
 h1 {

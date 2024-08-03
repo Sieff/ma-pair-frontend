@@ -4,7 +4,7 @@ export interface ChatMessageModel {
 }
 
 export enum MessageOrigin {
-    AGENT = "0",
-    USER = "1"
+    AGENT = "AGENT",
+    USER = "USER"
 }
 
