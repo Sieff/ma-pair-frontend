@@ -18,8 +18,10 @@ const Widget: React.FC = () => {
     return (
         <div className={styles.container}>
             {displayMessage && (
-                <div className={styles.message}>
-                    <MarkdownContainer text={displayMessage.message} />
+                <div className={styles.messageContainer}>
+                    <div className={styles.message}>
+                        <MarkdownContainer text={displayMessage.message} />
+                    </div>
                 </div>
             )}
             <img className={styles.avatar} src={"/avatar-full.png"} alt={"Avatar of the assistant"} />

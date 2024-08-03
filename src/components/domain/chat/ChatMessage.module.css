@@ -1,5 +1,5 @@
 .userMessage {
-    padding: var(--default-padding-l);
+    padding: var(--default-spacing);
     background-color: var(--dark-field-bg);
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 var(--border-radius-xl);
     justify-self: end;
