@@ -1,32 +1,17 @@
-import React, {useContext, useMemo} from "react";
-import {MessagesContext} from "../../../context/MessagesContext";
-import styles from './Widget.module.css';
-import {MessageOrigin} from "../../../model/Message";
-import MarkdownContainer from "../../atom/MarkdownContainer";
+import React, {useEffect, useRef} from "react";
+import CefQueryService from "../../../service/CefQueryService";
+import AgentOutlet from "./AgentOutlet";
 
-const Widget: React.FC = () => {
-    const {messages} = useContext(MessagesContext);
+const WidgetWindow: React.FC = () => {
+    const cefQueryService = useRef(CefQueryService.instance);
 
-    const displayMessage = useMemo(() => {
-        const agentMessages = messages.filter(message => message.origin === MessageOrigin.AGENT);
-        if (agentMessages.length > 0) {
-            return agentMessages[agentMessages.length - 1]
-        }
-        return null
-    }, [messages]);
+    useEffect(() => {
+        cefQueryService.current.requestMessages()
+    }, []);
 
     return (
-        <div className={styles.container}>
-            {displayMessage && (
-                <div className={styles.messageContainer}>
-                    <div className={styles.message}>
-                        <MarkdownContainer text={displayMessage.message} />
-                    </div>
-                </div>
-            )}
-            <img className={styles.avatar} src={"/avatar-full.png"} alt={"Avatar of the assistant"} />
-        </div>
+        <AgentOutlet />
     )
 }
 
-export default Widget;
+export default WidgetWindow;

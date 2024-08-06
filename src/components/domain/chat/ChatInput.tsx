@@ -1,18 +1,19 @@
-import React, {useCallback, useState} from "react";
-import SendMessageService from "../../../service/SendMessageService";
+import React, {useCallback, useRef, useState} from "react";
+import CefQueryService from "../../../service/CefQueryService";
 import styles from './ChatInput.module.css'
 import {TextInput} from "../../atom/TextInput";
 import {Button} from "../../atom/Button";
+import {MessageOrigin} from "../../../model/Message";
 
 const ChatInput: React.FC = () => {
-    const sendMessageService = SendMessageService.instance;
+    const cefQueryService = useRef(CefQueryService.instance);
     const [message, setMessage] = useState("");
 
     const sendMessage = useCallback(
         () => {
-            sendMessageService.sendMessage(message)
+            cefQueryService.current.sendInput({message, origin: MessageOrigin.USER})
         },
-        [sendMessageService, message],
+        [cefQueryService, message],
     );
 
     return (

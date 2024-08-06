@@ -1,29 +1,77 @@
+import {
+    CefQuery,
+    CefQueryRequest,
+    CefQueryType,
+    InputQuery,
+    RequestMessagesQuery,
+    RequestToolWindowQuery,
+    WidgetInputQuery
+} from "../model/CefQuery";
 import {Message} from "../model/Message";
 
-class SendMessageService {
-    private static _instance: SendMessageService;
+class CefQueryService {
+    private static _instance: CefQueryService;
 
     private constructor() {
     }
 
-    static get instance(): SendMessageService {
+    static get instance(): CefQueryService {
         if (this._instance == null) {
-            this._instance = new SendMessageService();
+            this._instance = new CefQueryService();
         }
         return this._instance;
     }
 
-    public sendMessage(message: string): any {
+    public sendInput(message: Message) {
+        const query: InputQuery = {
+            queryType: CefQueryType.INPUT,
+            message,
+            type: "InputQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public sendWidgetInput(message: Message) {
+        const query: WidgetInputQuery = {
+            queryType: CefQueryType.WIDGET_INPUT,
+            message,
+            type: "WidgetInputQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public requestMessages() {
+        const query: RequestMessagesQuery = {
+            queryType: CefQueryType.REQUEST_MESSAGES,
+            type: "RequestMessagesQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public requestToolWindow() {
+        const query: RequestToolWindowQuery = {
+            queryType: CefQueryType.REQUEST_TOOL_WINDOW,
+            type: "RequestToolWindowQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    private queryRequest(request: CefQuery): any {
         const _window = window as any;
         if (_window.cefQuery) {
-            const chatMessage: Message = { origin: MessageOrigin.USER, message }
-            _window.cefQuery({
-                request: JSON.stringify(chatMessage)
-            });
+            _window.cefQuery(this.toCefQueryRequest(request));
         } else {
-            throw new Error("cefQuery not initialized")
+            alert("cefQuery not initialized")
         }
+    }
+
+    private toCefQueryRequest(query: CefQuery): CefQueryRequest {
+        return {request: JSON.stringify(query)}
     }
 }
 
-export default SendMessageService;
+export default CefQueryService;

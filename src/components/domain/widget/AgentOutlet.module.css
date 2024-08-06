@@ -19,7 +19,7 @@
 
 .message {
     overflow-wrap: break-word;
-    height: 100%;
+    height: inherit;
     padding-right: var(--default-spacing);
     overflow-y: auto;
 }

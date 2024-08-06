@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ChatWindow from "./components/domain/chat/ChatWindow";
-import Widget from "./components/domain/widget/Widget";
+import WidgetWindow from "./components/domain/widget/WidgetWindow";
 import {MessagesContextProvider} from "./context/MessagesContext";
 
 const root = ReactDOM.createRoot(
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/widget",
-        element: <Widget />,
+        element: <WidgetWindow />,
     },
 ]);
 

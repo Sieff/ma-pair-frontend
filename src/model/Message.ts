@@ -1,4 +1,4 @@
-export interface ChatMessageModel {
+export interface Message {
     origin: MessageOrigin;
     message: string;
 }
@@ -8,3 +8,14 @@ export enum MessageOrigin {
     USER = "USER"
 }
 
+export interface AssistantMessage extends Message {
+    emotion: Emotion
+    quickReactions: string[]
+}
+
+export enum Emotion {
+    NEUTRAL = "NEUTRAL",
+    HAPPY = "HAPPY",
+    SAD = "SAD",
+    THINKING = "THINKING"
+}
