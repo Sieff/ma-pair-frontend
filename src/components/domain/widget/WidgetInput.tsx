@@ -12,7 +12,7 @@ const WidgetInput: React.FC = () => {
             return (<Button onClick={() => {}} variant={ButtonVariant.REGULAR}>{reaction}</Button>)
         })}
         <Button onClick={() => {}} >
-            <MaterialSymbol icon={"chat_bubble"} size={13} color={"white"}/>
+            <MaterialSymbol icon={"chat_bubble"} size={16} color={"white"}/>
         </Button>
     </div>)
 }

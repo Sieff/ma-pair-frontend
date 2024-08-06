@@ -1,17 +1,20 @@
+.userMessageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .userMessage {
     padding: var(--default-spacing);
     background-color: var(--dark-field-bg);
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 var(--border-radius-xl);
     justify-self: end;
     max-width: 62%;
-
-    overflow-wrap: break-word;
 }
 
-.userMessageContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+.message {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .agentMessageContainer {
