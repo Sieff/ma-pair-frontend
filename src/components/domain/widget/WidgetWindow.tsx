@@ -1,7 +1,7 @@
 import React, {useContext, useMemo} from "react";
 import {MessagesContext} from "../../../context/MessagesContext";
 import styles from './Widget.module.css';
-import {MessageOrigin} from "../../../model/ChatMessageModel";
+import {MessageOrigin} from "../../../model/Message";
 import MarkdownContainer from "../../atom/MarkdownContainer";
 
 const Widget: React.FC = () => {
