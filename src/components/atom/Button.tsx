@@ -7,7 +7,7 @@ interface ButtonProps {
     variant?: ButtonVariant;
 }
 
-enum ButtonVariant {
+export enum ButtonVariant {
     REGULAR,
     DEFAULT
 }

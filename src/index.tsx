@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ChatWindow from "./components/domain/chat/ChatWindow";
 import WidgetWindow from "./components/domain/widget/WidgetWindow";
 import {MessagesContextProvider} from "./context/MessagesContext";
+import 'react-material-symbols/rounded';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

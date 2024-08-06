@@ -1,17 +1,16 @@
 import styles from "./TextInput.module.css";
-import React, {ChangeEvent, useCallback, useState} from "react";
+import React, {ChangeEvent, useCallback} from "react";
+import TextareaAutosize from 'react-textarea-autosize';
 
 interface TextInputProps {
     onChange: (value: string) => void;
     placeholder: string;
+    maxRows?: number;
 }
 
-export const TextInput: React.FC<TextInputProps> = ({placeholder, onChange}: TextInputProps) => {
-    const [rows, setRows] = useState(1);
+export const TextInput: React.FC<TextInputProps> = ({placeholder, onChange, maxRows}: TextInputProps) => {
     const onInput = useCallback(
         (event: ChangeEvent<HTMLTextAreaElement>) => {
-            const rows = Math.min(event.target.value.split("\n").length, 5)
-            setRows(rows)
             onChange(event.target.value)
         },
         [onChange],
@@ -19,7 +18,7 @@ export const TextInput: React.FC<TextInputProps> = ({placeholder, onChange}: Tex
 
     return (
         <>
-            <textarea className={styles.inputField} onChange={onInput} placeholder={placeholder} rows={rows} />
+            <TextareaAutosize className={styles.inputField} onChange={onInput} placeholder={placeholder} maxRows={maxRows ?? 5} />
         </>
     )
 }

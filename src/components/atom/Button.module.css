@@ -22,7 +22,7 @@
 
 button {
     padding: 0 var(--default-padding-l);
-    height: calc(2 + var(--default-element-height));
+    height: var(--default-element-height);
     background-color: var(--dark-default-bg);
     border-radius: var(--border-radius-l);
     color: white;
@@ -30,6 +30,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 button:focus {
