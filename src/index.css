@@ -6,7 +6,8 @@ body {
   flex-direction: column;
 
   --border-radius: 2px;
-  --border-radius-l: 3px;
+  --border-radius-m: 3px;
+  --border-radius-l: 6px;
   --border-radius-xl: 12px;
 
   --outline-border-radius: 4px;
@@ -24,7 +25,9 @@ body {
 
   /* Color styles */
   --dark-default-bg: rgb(43, 45, 48);
+  --dark-code-bg: rgb(30, 31, 34);
   --dark-active: rgba(53, 116, 240, 1);
+
   --i-j--text--default: rgba(0, 0, 0, 1);
   --i-j-text-disabled: rgba(140, 140, 140, 1);
   --i-j-text-white: rgba(255, 255, 255, 1);
@@ -307,14 +310,17 @@ html, body, #root {
 
 h1 {
   font-size: 25px;
+  line-height: 32px;
 }
 
 h2 {
   font-size: 22px;
+  line-height: 28px;
 }
 
 h3 {
   font-size: 18px;
+  line-height: 24px;
 }
 
 h4 {

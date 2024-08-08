@@ -24,7 +24,7 @@ button {
     padding: 0 var(--default-padding-l);
     height: var(--default-element-height);
     background-color: var(--dark-default-bg);
-    border-radius: var(--border-radius-l);
+    border-radius: var(--border-radius-m);
     color: white;
 
     display: flex;

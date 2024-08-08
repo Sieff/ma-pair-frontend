@@ -8,6 +8,7 @@
 }
 
 .markdownContainer > * {
+    white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
 
@@ -51,10 +52,14 @@
 .markdownContainer i, .markdownContainer em {
     margin: 2px 0;
 }
-
 /* Blockquote */
 .markdownContainer blockquote {
-    margin: 20px 0;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+
+    border-left: 4px solid var(--dark-field-bg);
+    padding-left: var(--default-spacing);
+    font-style: italic;
 }
 
 /* Listen */
@@ -68,8 +73,28 @@
 }
 
 /* Code */
-.markdownContainer pre, .markdownContainer code {
-    margin: 10px 0;
+/* Stil für Inline-Code */
+.markdownContainer code {
+    background-color: var(--dark-field-bg);
+    border-radius: var(--border-radius);
+    padding: 2px 4px;
+    font-family: monospace;
+}
+
+/* Stil für Block-Code */
+.markdownContainer pre {
+    background-color: var(--dark-code-bg);
+    border: 1px solid var(--dark-field-bg);
+    border-radius: var(--border-radius-l);
+    padding: var(--default-spacing);
+    overflow-x: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-wrap: unset;
+}
+
+.markdownContainer pre code {
+    background-color: var(--dark-code-bg);
 }
 
 /* Links */
