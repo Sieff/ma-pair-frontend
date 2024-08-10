@@ -3,4 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    gap: var(--default-spacing);
+
+    padding: var(--default-spacing);
 }

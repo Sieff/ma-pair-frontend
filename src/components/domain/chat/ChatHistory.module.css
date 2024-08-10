@@ -6,6 +6,13 @@
 
     overflow-y: auto;
 
-    margin: var(--default-spacing) 0 var(--default-spacing) var(--default-spacing);
     padding-right: var(--default-spacing);
+
+    position: relative;
+}
+
+.toBottom {
+    position: sticky;
+    bottom: calc(2 * var(--default-spacing));
+    margin: 0 auto;
 }
