@@ -6,13 +6,13 @@ export interface CefQueryRequest {
 
 export interface CefQuery {
     queryType: CefQueryType
-    type: "InputQuery" | "WidgetInputQuery" | "RequestToolWindowQuery" | "RequestMessagesQuery"
+    type: "InputQuery" | "WidgetInputQuery" | "RequestToolWindowFocusQuery" | "RequestMessagesQuery"
 }
 
 export enum CefQueryType {
     INPUT = "INPUT",
     WIDGET_INPUT = "WIDGET_INPUT",
-    REQUEST_TOOL_WINDOW = "REQUEST_TOOL_WINDOW",
+    REQUEST_TOOL_WINDOW_FOCUS = "REQUEST_TOOL_WINDOW_FOCUS",
     REQUEST_MESSAGES = "REQUEST_MESSAGES",
 }
 
@@ -24,7 +24,7 @@ export interface WidgetInputQuery extends InputQuery {
 
 }
 
-export interface RequestToolWindowQuery extends CefQuery {
+export interface RequestToolWindowFocusQuery extends CefQuery {
 
 }
 

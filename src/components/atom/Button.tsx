@@ -12,7 +12,7 @@ export enum ButtonVariant {
     DEFAULT
 }
 
-export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({onClick, variant, disabled, children}: React.PropsWithChildren<ButtonProps>) => {
+const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({onClick, variant, disabled, children}: React.PropsWithChildren<ButtonProps>) => {
     const className = useMemo(() => {
         if (disabled) {
             return styles.disabled
@@ -31,3 +31,5 @@ export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({onClick,
         </>
     )
 }
+
+export default Button;

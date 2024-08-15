@@ -282,6 +282,11 @@ html, body, #root {
   margin: 0;
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
 /* For WebKit browsers */
 ::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0);

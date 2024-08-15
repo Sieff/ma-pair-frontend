@@ -1,6 +1,8 @@
 import styles from "./TextInput.module.css";
-import React, {ChangeEvent, useCallback} from "react";
+import React, {ChangeEvent, useCallback, useEffect, useRef} from "react";
 import TextareaAutosize from 'react-textarea-autosize';
+import DataPacketService from "../../service/DataPacketService";
+import {DataPacket, DataPacketType} from "../../model/DataPacket";
 
 interface TextInputProps {
     value: string;
@@ -10,7 +12,25 @@ interface TextInputProps {
     maxRows?: number;
 }
 
-export const TextInput: React.FC<TextInputProps> = ({value, placeholder, onChange, onEnter, maxRows}: TextInputProps) => {
+const TextInput: React.FC<TextInputProps> = ({value, placeholder, onChange, onEnter, maxRows}: TextInputProps) => {
+    const dataPacketService = useRef(DataPacketService.instance);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+    const setRef = (element: HTMLTextAreaElement | null) => {
+        textareaRef.current = element;
+    };
+
+    const setFocus = useCallback(
+        (_: DataPacket) => {
+            textareaRef.current?.focus()
+        },
+        [textareaRef]
+    );
+
+    useEffect(() => {
+        dataPacketService.current.setCallback(DataPacketType.REQUEST_TEXT_INPUT_FOCUS, setFocus)
+    }, [setFocus]);
+
     const onInput = useCallback(
         (event: ChangeEvent<HTMLTextAreaElement>) => {
             onChange(event.target.value)
@@ -30,7 +50,12 @@ export const TextInput: React.FC<TextInputProps> = ({value, placeholder, onChang
 
     return (
         <>
-            <TextareaAutosize value={value} className={styles.inputField} onChange={onInput} placeholder={placeholder} maxRows={maxRows ?? 10} onKeyDown={onEnterPress} />
+            <TextareaAutosize value={value} className={styles.inputField} onChange={onInput} placeholder={placeholder}
+                              maxRows={maxRows ?? 10} onKeyDown={onEnterPress}
+                              ref={setRef}
+            />
         </>
     )
 }
+
+export default TextInput;

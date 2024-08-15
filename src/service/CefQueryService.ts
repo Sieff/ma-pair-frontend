@@ -4,7 +4,7 @@ import {
     CefQueryType,
     InputQuery,
     RequestMessagesQuery,
-    RequestToolWindowQuery,
+    RequestToolWindowFocusQuery,
     WidgetInputQuery
 } from "../model/CefQuery";
 import {Message} from "../model/Message";
@@ -51,10 +51,10 @@ class CefQueryService {
         this.queryRequest(query)
     }
 
-    public requestToolWindow() {
-        const query: RequestToolWindowQuery = {
-            queryType: CefQueryType.REQUEST_TOOL_WINDOW,
-            type: "RequestToolWindowQuery"
+    public requestToolWindowFocus() {
+        const query: RequestToolWindowFocusQuery = {
+            queryType: CefQueryType.REQUEST_TOOL_WINDOW_FOCUS,
+            type: "RequestToolWindowFocusQuery"
         }
 
         this.queryRequest(query)

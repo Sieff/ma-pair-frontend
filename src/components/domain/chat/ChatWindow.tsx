@@ -14,7 +14,7 @@ const ChatWindow: React.FC = () => {
     return (
         <div className={styles.container}>
             <ChatHistory/>
-            <ChatInput />
+            <ChatInput maxRows={5} />
         </div>
     )
 }

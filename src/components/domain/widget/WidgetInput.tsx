@@ -1,28 +1,25 @@
-import React, {useCallback, useContext, useState} from "react";
+import React, {useContext, useRef} from "react";
 import {MessagesContext} from "../../../context/MessagesContext";
 import styles from "./WidgetInput.module.css"
-import {Button, ButtonVariant} from "../../atom/Button";
+import Button, {ButtonVariant} from "../../atom/Button";
 import {MaterialSymbol} from "react-material-symbols";
-import ChatInput from "../ChatInput";
+import {cls} from "../../../cls";
+import CefQueryService from "../../../service/CefQueryService";
+import {MessageOrigin} from "../../../model/Message";
 
 const WidgetInput: React.FC = () => {
     const {temporaryMessage} = useContext(MessagesContext);
-    const [showTextInput, setShowTextInput] = useState(false);
-
-
+    const cefQueryService = useRef(CefQueryService.instance);
 
     return (<div className={styles.container}>
-        <div className={styles.topRow}>
+        <div className={cls(styles.topRow, styles.previousElement)}>
             {temporaryMessage?.quickReactions.map(reaction => {
-                return (<Button onClick={() => {}} variant={ButtonVariant.REGULAR}>{reaction}</Button>)
+                return (<Button onClick={() => {cefQueryService.current.sendWidgetInput({origin: MessageOrigin.USER, message: reaction})}} variant={ButtonVariant.REGULAR}>{reaction}</Button>)
             })}
-            <Button onClick={() => {setShowTextInput(true)}} >
+            <Button onClick={() => {cefQueryService.current.requestToolWindowFocus()}} >
                 <MaterialSymbol icon={"chat_bubble"} size={16} color={"white"}/>
             </Button>
         </div>
-        {showTextInput && (
-            <ChatInput onSendMessage={() => {setShowTextInput(false)}}/>
-        )}
     </div>)
 }
 

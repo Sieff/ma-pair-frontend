@@ -4,7 +4,8 @@ class DataPacketService {
     private static _instance: DataPacketService | undefined;
     private _callbacks: {[key in DataPacketType]: (packet: DataPacket) => void} = {
         UPDATE_TEMPORARY_MESSAGE: (_) => {},
-        UPDATE_MESSAGES: (_) => {}
+        UPDATE_MESSAGES: (_) => {},
+        REQUEST_TEXT_INPUT_FOCUS: (_) => {}
     };
 
     private constructor() {
