@@ -23,6 +23,7 @@
     padding: var(--default-spacing);
     max-width: 100%;
     flex: 1;
+    min-height: calc(2 * var(--default-spacing) + 1lh);
     overflow: hidden;
 }
 
@@ -31,9 +32,4 @@
     flex: 1;
     padding-right: var(--default-spacing);
     overflow-y: scroll;
-}
-
-.avatar {
-    height: 128px;
-    width: 128px;
 }

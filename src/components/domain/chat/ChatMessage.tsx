@@ -20,6 +20,7 @@ interface AssistantMessageProps {
 
 const ChatMessage: React.ForwardRefExoticComponent<ChatMessageProps & React.RefAttributes<HTMLDivElement>> =
     forwardRef<HTMLDivElement, ChatMessageProps>(({message, messageRelation}, ref) => {
+
         return (<div ref={ref}>
             {message.origin === MessageOrigin.USER ? (
                 <UserMessage message={message} />

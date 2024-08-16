@@ -22,7 +22,7 @@
 
 button {
     padding: 0 var(--default-padding-l);
-    height: var(--default-element-height);
+    min-height: var(--default-element-height);
     background-color: var(--dark-default-bg);
     border-radius: var(--border-radius-m);
     color: white;
@@ -35,6 +35,8 @@ button {
     user-select: none;
 
     transition: background-color .2s ease-in;
+
+    overflow-wrap: anywhere;
 }
 
 button:focus {

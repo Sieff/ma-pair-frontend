@@ -10,13 +10,13 @@ export enum MessageOrigin {
 
 export interface AssistantMessage extends Message {
     emotion: Emotion
-    quickReactions: string[],
-    selfInitiated: boolean
+    reactions: string[],
+    proactive: boolean
 }
 
 export enum Emotion {
     NEUTRAL = "NEUTRAL",
     HAPPY = "HAPPY",
     SAD = "SAD",
-    THINKING = "THINKING"
+    CONFUSED = "CONFUSED",
 }

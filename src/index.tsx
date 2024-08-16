@@ -27,6 +27,13 @@ const router = createBrowserRouter([
     },
 ]);
 
+document.addEventListener('click', (event: MouseEvent) => {
+    let target = event.target as HTMLElement;
+
+    if (target && target.tagName === 'A') {
+        event.preventDefault();
+    }
+});
 
 root.render(
   <React.StrictMode>

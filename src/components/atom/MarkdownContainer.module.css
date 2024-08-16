@@ -75,7 +75,7 @@
 /* Code */
 /* Stil für Inline-Code */
 .markdownContainer code {
-    background-color: var(--dark-field-bg);
+    background-color: var(--dark-code-accent);
     border-radius: var(--border-radius);
     padding: 2px 4px;
     font-family: monospace;
@@ -84,7 +84,7 @@
 /* Stil für Block-Code */
 .markdownContainer pre {
     background-color: var(--dark-code-bg);
-    border: 1px solid var(--dark-field-bg);
+    border: 1px solid var(--dark-code-accent);
     border-radius: var(--border-radius-l);
     padding: var(--default-spacing);
     overflow-x: auto;
@@ -95,6 +95,7 @@
 
 .markdownContainer pre code {
     background-color: var(--dark-code-bg);
+    padding: 0;
 }
 
 /* Links */

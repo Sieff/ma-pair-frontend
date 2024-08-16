@@ -31,7 +31,7 @@ class MessageRelationService {
             }
 
             // Message is not self initiated
-            if (!(message as AssistantMessage).selfInitiated) {
+            if (!(message as AssistantMessage).proactive) {
                 return false
             }
 
@@ -48,7 +48,7 @@ class MessageRelationService {
             const nextMessage = messages[index + 1] as AssistantMessage
 
             // Next is not self initiated
-            return !nextMessage.selfInitiated
+            return !nextMessage.proactive
         })
 
         return messages.map((_, index) => {

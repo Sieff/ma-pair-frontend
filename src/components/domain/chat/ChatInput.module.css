@@ -1,7 +1,13 @@
 .container {
     display: flex;
+    flex-direction: column;
+    gap: var(--default-spacing);
+}
+
+.inputContainer {
+    display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--default-spacing);
 }
 
 .textInput {

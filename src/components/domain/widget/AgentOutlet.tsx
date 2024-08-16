@@ -1,11 +1,18 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useRef} from "react";
 import {MessagesContext} from "../../../context/MessagesContext";
 import styles from './AgentOutlet.module.css';
 import MarkdownContainer from "../../atom/MarkdownContainer";
 import WidgetInput from "./WidgetInput";
+import AgentAvatar from "./AgentAvatar";
 
 const AgentOutlet: React.FC = () => {
+    const ref = useRef<HTMLDivElement | null>(null)
     const {temporaryMessage} = useContext(MessagesContext);
+
+    useEffect(() => {
+        ref.current?.scrollTo(0, 0);
+    }, [temporaryMessage]);
+
 
     return (
         <div className={styles.container}>
@@ -13,14 +20,14 @@ const AgentOutlet: React.FC = () => {
                 {temporaryMessage && (
                     <div className={styles.messageContainer}>
                         <div className={styles.message}>
-                            <MarkdownContainer text={temporaryMessage.message} />
+                            <MarkdownContainer text={temporaryMessage.message} ref={ref} />
                         </div>
                     </div>
                 )}
                 <WidgetInput />
             </div>
 
-            <img className={styles.avatar} src={"/avatar-full.png"} alt={"Avatar of the assistant"} />
+            <AgentAvatar emotion={temporaryMessage?.emotion} />
         </div>
     )
 }
