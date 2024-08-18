@@ -15,7 +15,7 @@ interface ChatInputProps {
 
 const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
     const cefQueryService = useRef(CefQueryService.instance);
-    const {temporaryMessage} = useContext(MessagesContext);
+    const {widgetMessage} = useContext(MessagesContext);
     const [message, setMessage] = useState("");
 
     const sendMessage = useCallback(
@@ -34,9 +34,9 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
 
     return (
         <div className={styles.container}>
-            {temporaryMessage && temporaryMessage.reactions.length > 0 && (
+            {widgetMessage && widgetMessage.reactions.length > 0 && (
                 <div className={styles.quickReactionContainer}>
-                    <QuickReaction reactions={temporaryMessage.reactions} widget={false} />
+                    <QuickReaction reactions={widgetMessage.reactions} widget={false} />
                 </div>
             )}
             <div className={styles.inputContainer}>

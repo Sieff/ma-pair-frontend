@@ -29,6 +29,10 @@ const ChatHistory: React.FC = () => {
     };
 
     useEffect(() => {
+        if (messages.length === 0) {
+            return;
+        }
+
         const lastMessage = messages[messages.length - 1]
         if (lastMessage.origin === MessageOrigin.AGENT) {
             if ((lastMessage as AssistantMessage).proactive) {

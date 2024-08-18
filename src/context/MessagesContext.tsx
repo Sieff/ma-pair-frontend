@@ -1,43 +1,43 @@
 import React, {PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {DataPacketType, UpdateTemporaryMessagePacket, UpdateMessagesPacket, DataPacket} from "../model/DataPacket";
+import {DataPacketType, UpdateWidgetMessagePacket, UpdateMessagesPacket, DataPacket} from "../model/DataPacket";
 import DataPacketService from "../service/DataPacketService";
 import {AssistantMessage, Message, MessageOrigin} from "../model/Message";
 
 interface MessagesContextValue {
     messages: Message[];
-    temporaryMessage: AssistantMessage | undefined;
+    widgetMessage: AssistantMessage | undefined;
 }
 
-export const MessagesContext = React.createContext({messages: [], temporaryMessage: undefined} as MessagesContextValue);
+export const MessagesContext = React.createContext({messages: [], widgetMessage: undefined} as MessagesContextValue);
 
 
 export const MessagesContextProvider: React.FC<PropsWithChildren> = ({children}) => {
     const [messages, setMessages] = useState([] as Message[]);
-    const [temporaryMessage, setTemporaryMessage] = useState(undefined as AssistantMessage | undefined);
+    const [widgetMessage, setWidgetMessage] = useState(undefined as AssistantMessage | undefined);
     const contextValue = useMemo(() => {
-        return {messages, temporaryMessage}
-    }, [messages, temporaryMessage]);
+        return {messages, widgetMessage}
+    }, [messages, widgetMessage]);
 
     const dataPacketService = useRef(DataPacketService.instance);
 
     const updateMessages = useCallback(
         (packet: DataPacket) => {
             setMessages((packet as UpdateMessagesPacket).messages);
-            setTemporaryMessage((packet as UpdateMessagesPacket).temporaryMessage)
+            setWidgetMessage((packet as UpdateMessagesPacket).widgetMessage)
         },
-        [setMessages, setTemporaryMessage]
+        [setMessages, setWidgetMessage]
     );
 
-    const updateTemporaryMessage = useCallback(
+    const updateWidgetMessage = useCallback(
         (packet: DataPacket) => {
-            setTemporaryMessage((packet as UpdateTemporaryMessagePacket).message)
+            setWidgetMessage((packet as UpdateWidgetMessagePacket).message)
         },
-        [setTemporaryMessage]
+        [setWidgetMessage]
     );
 
     useEffect(() => {
         dataPacketService.current.setCallback(DataPacketType.UPDATE_MESSAGES, (packet) => {updateMessages(packet)});
-        dataPacketService.current.setCallback(DataPacketType.UPDATE_TEMPORARY_MESSAGE, (packet) => {updateTemporaryMessage(packet)});
+        dataPacketService.current.setCallback(DataPacketType.UPDATE_WIDGET_MESSAGE, (packet) => {updateWidgetMessage(packet)});
 
         // Dev setup
         const _window = window as any;
@@ -51,7 +51,7 @@ export const MessagesContextProvider: React.FC<PropsWithChildren> = ({children})
                 {origin: MessageOrigin.AGENT, message: "Fehler bei der Kommunikation mit dem Agenten"},
             ])
         }
-    }, [updateTemporaryMessage, updateMessages]);
+    }, [updateWidgetMessage, updateMessages]);
 
     return (<MessagesContext.Provider value={contextValue}>
         {children}

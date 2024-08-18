@@ -7,27 +7,27 @@ import AgentAvatar from "./AgentAvatar";
 
 const AgentOutlet: React.FC = () => {
     const ref = useRef<HTMLDivElement | null>(null)
-    const {temporaryMessage} = useContext(MessagesContext);
+    const {widgetMessage} = useContext(MessagesContext);
 
     useEffect(() => {
         ref.current?.scrollTo(0, 0);
-    }, [temporaryMessage]);
+    }, [widgetMessage]);
 
 
     return (
         <div className={styles.container}>
             <div className={styles.interact}>
-                {temporaryMessage && (
+                {widgetMessage && (
                     <div className={styles.messageContainer}>
                         <div className={styles.message}>
-                            <MarkdownContainer text={temporaryMessage.message} ref={ref} />
+                            <MarkdownContainer text={widgetMessage.message} ref={ref} />
                         </div>
                     </div>
                 )}
                 <WidgetInput />
             </div>
 
-            <AgentAvatar emotion={temporaryMessage?.emotion} />
+            <AgentAvatar emotion={widgetMessage?.emotion} />
         </div>
     )
 }
