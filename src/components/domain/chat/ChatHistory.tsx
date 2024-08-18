@@ -6,6 +6,7 @@ import useOnScreen from "../../../hooks/useOnScreen";
 import {MaterialSymbol} from "react-material-symbols";
 import Button, {ButtonVariant} from "../../atom/Button";
 import MessageRelationService from "../../../service/MessageRelationService";
+import {AssistantMessage, MessageOrigin} from "../../../model/Message";
 
 const ChatHistory: React.FC = () => {
     const messageRelationService = useRef<MessageRelationService>(MessageRelationService.instance)
@@ -28,6 +29,13 @@ const ChatHistory: React.FC = () => {
     };
 
     useEffect(() => {
+        const lastMessage = messages[messages.length - 1]
+        if (lastMessage.origin === MessageOrigin.AGENT) {
+            if ((lastMessage as AssistantMessage).proactive) {
+                return
+            }
+        }
+
         scrollToLast()
     }, [messages]);
 
@@ -37,13 +45,15 @@ const ChatHistory: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            {messages.map((message, idx) => (
-                <ChatMessage key={idx} message={message} messageRelation={messageRelations[idx]} ref={ref => {
-                    if (idx === messages.length - 1) {
-                        setRefElement(ref)
-                    }
-                }} />
-            ))}
+            <div className={styles.messagesContainer}>
+                {messages.map((message, idx) => (
+                    <ChatMessage key={idx} message={message} messageRelation={messageRelations[idx]} ref={ref => {
+                        if (idx === messages.length - 1) {
+                            setRefElement(ref)
+                        }
+                    }} />
+                ))}
+            </div>
 
             <div ref={messagesBottomRef} />
 

@@ -1,3 +1,7 @@
+.lowlight > * {
+    color: var(--dark-text-disabled);
+}
+
 .markdownContainer {
     display: flex;
     flex-direction: column;

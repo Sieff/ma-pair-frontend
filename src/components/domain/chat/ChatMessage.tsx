@@ -3,6 +3,7 @@ import {AssistantMessage, Message, MessageOrigin} from "../../../model/Message";
 import styles from './ChatMessage.module.css';
 import MarkdownContainer from "../../atom/MarkdownContainer";
 import MessageRelation from "../../../model/MessageRelation";
+import {cls} from "../../../cls";
 
 interface ChatMessageProps {
     message: Message;
@@ -45,10 +46,12 @@ const UserMessage: React.FC<UserMessageProps> = ({message}) => {
 const AgentMessage: React.FC<AssistantMessageProps> = ({message, messageRelation}) => {
     return (
         <div className={styles.agentMessageContainer}>
-            {messageRelation.firstInBlock && (
-                <img className={styles.avatar} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
+            {messageRelation.firstInBlock ? (
+                <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
+            ) : (
+                <div className={styles.avatarIconWidth} />
             )}
-            <MarkdownContainer text={message.message} />
+            <MarkdownContainer text={message.message} lowlight={message.proactive && !messageRelation.lastInSelfInitiatedBlock} />
         </div>
     )
 }

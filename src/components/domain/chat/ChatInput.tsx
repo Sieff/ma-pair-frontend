@@ -34,8 +34,10 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
 
     return (
         <div className={styles.container}>
-            {temporaryMessage && (
-                <QuickReaction reactions={temporaryMessage.reactions} widget={false} />
+            {temporaryMessage && temporaryMessage.reactions.length > 0 && (
+                <div className={styles.quickReactionContainer}>
+                    <QuickReaction reactions={temporaryMessage.reactions} widget={false} />
+                </div>
             )}
             <div className={styles.inputContainer}>
                 <TextInput value={message} onChange={setMessage} placeholder={"Sende eine Nachricht"} onEnter={sendMessage} maxRows={maxRows ?? 1}/>
