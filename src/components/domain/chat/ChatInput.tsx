@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useRef, useState} from "react";
+import React, {useCallback, useContext, useEffect, useRef, useState} from "react";
 import CefQueryService from "../../../service/CefQueryService";
 import styles from './ChatInput.module.css'
 import TextInput from "../../atom/TextInput";
@@ -31,6 +31,11 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
         },
         [message, onSendMessage],
     );
+
+    useEffect(() => {
+        cefQueryService.current.inputChangedEvent()
+    }, [message]);
+
 
     return (
         <div className={styles.container}>

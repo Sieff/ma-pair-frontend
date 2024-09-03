@@ -1,7 +1,7 @@
 import {
     CefQuery,
     CefQueryRequest,
-    CefQueryType,
+    CefQueryType, InputChangedEventQuery,
     InputQuery,
     RequestMessagesQuery,
     RequestToolWindowFocusQuery,
@@ -55,6 +55,15 @@ class CefQueryService {
         const query: RequestToolWindowFocusQuery = {
             queryType: CefQueryType.REQUEST_TOOL_WINDOW_FOCUS,
             type: "RequestToolWindowFocusQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public inputChangedEvent() {
+        const query: InputChangedEventQuery = {
+            queryType: CefQueryType.INPUT_CHANGED_EVENT,
+            type: "InputChangedEventQuery"
         }
 
         this.queryRequest(query)
