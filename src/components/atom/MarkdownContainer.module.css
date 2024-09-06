@@ -87,7 +87,7 @@
 
 /* Stil für Block-Code */
 .markdownContainer pre {
-    background-color: var(--dark-code-bg);
+    background-color: var(--dark-dark-accent);
     border: 1px solid var(--dark-code-accent);
     border-radius: var(--border-radius-l);
     padding: var(--default-spacing);
@@ -98,7 +98,7 @@
 }
 
 .markdownContainer pre code {
-    background-color: var(--dark-code-bg);
+    background-color: var(--dark-dark-accent);
     padding: 0;
 }
 

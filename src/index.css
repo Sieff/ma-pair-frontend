@@ -23,9 +23,13 @@ body {
 
   --default-spacing: 1rem;
 
+  --golden-ratio-big: 62%;
+  --golden-ratio-small: 38%;
+
   /* Color styles */
   --dark-default-bg: rgb(43, 45, 48);
-  --dark-code-bg: rgb(30, 31, 34);
+  --dark-dark-accent: rgb(30, 31, 34);
+  --dark-dark-accent-50: rgb(30, 31, 34, .5);
   --dark-code-accent: rgb(63, 66, 70);
   --dark-active: rgba(53, 116, 240, 1);
 

@@ -11,7 +11,7 @@ const WidgetInput: React.FC = () => {
     const cefQueryService = useRef(CefQueryService.instance);
 
     return (<div className={styles.container}>
-        {widgetMessage && (
+        {widgetMessage ? (
             <QuickReaction reactions={widgetMessage.reactions} widget={true}>
                 <div className={styles.buttonContainer}>
                     <Button onClick={() => {cefQueryService.current.requestToolWindowFocus()}} >
@@ -19,6 +19,12 @@ const WidgetInput: React.FC = () => {
                     </Button>
                 </div>
             </QuickReaction>
+        ) : (
+            <div className={styles.buttonContainer}>
+                <Button onClick={() => {cefQueryService.current.requestToolWindowFocus()}} >
+                    <MaterialSymbol icon={"chat_bubble"} size={16} color={"white"}/>
+                </Button>
+            </div>
         )}
     </div>)
 }
