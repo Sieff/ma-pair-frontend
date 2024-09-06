@@ -1,5 +1,6 @@
 import React, {forwardRef, useMemo} from "react";
 import styles from "./Button.module.css";
+import {cls} from "../../cls";
 
 interface ButtonProps {
     onClick: () => void;
@@ -31,7 +32,7 @@ const Button: React.ForwardRefExoticComponent<React.PropsWithChildren<ButtonProp
 
         return (
             <>
-                <button className={className} onClick={onClick} disabled={disabled} ref={ref}>{children}</button>
+                <button className={cls(className, styles.button)} onClick={onClick} disabled={disabled} ref={ref}>{children}</button>
             </>
         )
 })

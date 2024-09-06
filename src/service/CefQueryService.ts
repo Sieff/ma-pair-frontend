@@ -4,7 +4,7 @@ import {
     CefQueryType, InputChangedEventQuery,
     InputQuery,
     RequestMessagesQuery,
-    RequestToolWindowFocusQuery,
+    RequestToolWindowFocusQuery, ResetConversationQuery,
     WidgetInputQuery
 } from "../model/CefQuery";
 import {Message} from "../model/Message";
@@ -64,6 +64,24 @@ class CefQueryService {
         const query: InputChangedEventQuery = {
             queryType: CefQueryType.INPUT_CHANGED_EVENT,
             type: "InputChangedEventQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public resetConversation() {
+        const query: ResetConversationQuery = {
+            queryType: CefQueryType.RESET_CONVERSATION,
+            type: "ResetConversationQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public regenerateLastMessage() {
+        const query: ResetConversationQuery = {
+            queryType: CefQueryType.REGENERATE_LAST_MESSAGE,
+            type: "RegenerateLastMessageQuery"
         }
 
         this.queryRequest(query)

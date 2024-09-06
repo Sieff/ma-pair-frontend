@@ -32,6 +32,8 @@ body {
   --dark-dark-accent-50: rgb(30, 31, 34, .5);
   --dark-code-accent: rgb(63, 66, 70);
   --dark-active: rgba(53, 116, 240, 1);
+  --dark-button-active: rgb(75, 76, 79);
+  --dark-button-hover: rgb(57, 59, 64);
 
   --i-j--text--default: rgba(0, 0, 0, 1);
   --i-j-text-disabled: rgba(140, 140, 140, 1);

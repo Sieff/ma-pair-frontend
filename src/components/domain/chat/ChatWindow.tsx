@@ -4,7 +4,7 @@ import ChatHistory from "./ChatHistory";
 import ChatInput from "./ChatInput";
 import CefQueryService from "../../../service/CefQueryService";
 import Divider from "../../atom/Divider";
-import DeleteConversation from "../DeleteConversation";
+import ResetConversation from "../ResetConversation";
 import FocusTrap from "focus-trap-react";
 
 const ChatWindow: React.FC = () => {
@@ -19,7 +19,7 @@ const ChatWindow: React.FC = () => {
             <div className={styles.container}>
                 <Divider />
                 <div className={styles.topBar}>
-                    <DeleteConversation />
+                    <ResetConversation />
                 </div>
 
                 <Divider />
