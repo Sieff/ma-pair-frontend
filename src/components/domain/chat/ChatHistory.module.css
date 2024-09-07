@@ -19,10 +19,6 @@
     padding-bottom: 2px;
 }
 
-.regenerateButton {
-    align-self: center;
-}
-
 .toBottom {
     position: sticky;
     bottom: calc(2 * var(--default-spacing));

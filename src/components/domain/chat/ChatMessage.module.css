@@ -25,6 +25,18 @@
     margin-right: 1rem;
 }
 
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--default-spacing);
+}
+
+.iconWrapper {
+    height: 0;
+    overflow: visible;
+}
+
 .avatarIconWidth {
     width: 32px;
 }
