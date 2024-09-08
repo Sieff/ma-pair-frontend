@@ -5,7 +5,8 @@ class DataPacketService {
     private _callbacks: {[key in DataPacketType]: (packet: DataPacket) => void} = {
         UPDATE_WIDGET_MESSAGE: (_) => {},
         UPDATE_MESSAGES: (_) => {},
-        REQUEST_TEXT_INPUT_FOCUS: (_) => {}
+        REQUEST_TEXT_INPUT_FOCUS: (_) => {},
+        UPDATE_LOG_STATUS: (_) => {}
     };
 
     private constructor() {

@@ -14,10 +14,3 @@
     justify-content: flex-start;
     gap: var(--default-spacing);
 }
-
-.topBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 0 var(--default-spacing);
-}

@@ -3,9 +3,8 @@ import styles from './ChatWindow.module.css'
 import ChatHistory from "./ChatHistory";
 import ChatInput from "./ChatInput";
 import CefQueryService from "../../../service/CefQueryService";
-import Divider from "../../atom/Divider";
-import ResetConversation from "../ResetConversation";
 import FocusTrap from "focus-trap-react";
+import TopBar from "./TopBar";
 
 const ChatWindow: React.FC = () => {
     const cefQueryService = useRef(CefQueryService.instance);
@@ -17,12 +16,7 @@ const ChatWindow: React.FC = () => {
     return (
         <FocusTrap>
             <div className={styles.container}>
-                <Divider />
-                <div className={styles.topBar}>
-                    <ResetConversation />
-                </div>
-
-                <Divider />
+                <TopBar />
 
                 <div className={styles.chat}>
                     <ChatHistory/>

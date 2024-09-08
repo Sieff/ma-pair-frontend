@@ -7,6 +7,7 @@ import ChatWindow from "./components/domain/chat/ChatWindow";
 import WidgetWindow from "./components/domain/widget/WidgetWindow";
 import {MessagesContextProvider} from "./context/MessagesContext";
 import 'react-material-symbols/rounded';
+import {LogStatusContextProvider} from "./context/LogStatusContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -36,11 +37,13 @@ document.addEventListener('click', (event: MouseEvent) => {
 });
 
 root.render(
-  <React.StrictMode>
-    <MessagesContextProvider>
-        <RouterProvider router={router} />
-    </MessagesContextProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <MessagesContextProvider>
+            <LogStatusContextProvider>
+                <RouterProvider router={router} />
+            </LogStatusContextProvider>
+        </MessagesContextProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
