@@ -2,7 +2,7 @@ import React, {forwardRef} from "react";
 import styles from "./MarkdownContainer.module.css";
 import Markdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
-import {cls} from "../../cls";
+import {cls} from "../../util/cls";
 
 interface MarkdownContainerProps {
     text: string,

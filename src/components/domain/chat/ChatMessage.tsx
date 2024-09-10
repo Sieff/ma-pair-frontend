@@ -3,7 +3,7 @@ import {AssistantMessage, Message, MessageOrigin} from "../../../model/Message";
 import styles from './ChatMessage.module.css';
 import MarkdownContainer from "../../atom/MarkdownContainer";
 import MessageRelation from "../../../model/MessageRelation";
-import {cls} from "../../../cls";
+import {cls} from "../../../util/cls";
 
 interface ChatMessageProps {
     message: Message;

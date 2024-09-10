@@ -8,7 +8,8 @@ export enum DataPacketType {
     UPDATE_MESSAGES = "UPDATE_MESSAGES",
     UPDATE_WIDGET_MESSAGE = "UPDATE_WIDGET_MESSAGE",
     REQUEST_TEXT_INPUT_FOCUS = "REQUEST_TEXT_INPUT_FOCUS",
-    UPDATE_LOG_STATUS = "UPDATE_LOG_STATUS"
+    UPDATE_LOG_STATUS = "UPDATE_LOG_STATUS",
+    UPDATE_BUNDLE = "UPDATE_BUNDLE"
 }
 
 export interface UpdateMessagesPacket extends DataPacket {
@@ -25,4 +26,8 @@ export interface RequestTextInputFocusPacket extends DataPacket {
 
 export interface UpdateLogStatusPacket extends DataPacket {
     success: boolean
+}
+
+export interface UpdateBundlePacket extends DataPacket {
+    locale: string
 }

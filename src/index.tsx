@@ -8,6 +8,7 @@ import WidgetWindow from "./components/domain/widget/WidgetWindow";
 import {MessagesContextProvider} from "./context/MessagesContext";
 import 'react-material-symbols/rounded';
 import {LogStatusContextProvider} from "./context/LogStatusContext";
+import {BundleContextProvider} from "./context/BundleContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -40,7 +41,9 @@ root.render(
     <React.StrictMode>
         <MessagesContextProvider>
             <LogStatusContextProvider>
-                <RouterProvider router={router} />
+                <BundleContextProvider>
+                    <RouterProvider router={router} />
+                </BundleContextProvider>
             </LogStatusContextProvider>
         </MessagesContextProvider>
     </React.StrictMode>

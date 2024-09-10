@@ -6,7 +6,8 @@ class DataPacketService {
         UPDATE_WIDGET_MESSAGE: (_) => {},
         UPDATE_MESSAGES: (_) => {},
         REQUEST_TEXT_INPUT_FOCUS: (_) => {},
-        UPDATE_LOG_STATUS: (_) => {}
+        UPDATE_LOG_STATUS: (_) => {},
+        UPDATE_BUNDLE: (_) => {},
     };
 
     private constructor() {

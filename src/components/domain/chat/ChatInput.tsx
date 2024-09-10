@@ -7,6 +7,7 @@ import {MessageOrigin} from "../../../model/Message";
 import {MaterialSymbol} from "react-material-symbols";
 import {MessagesContext} from "../../../context/MessagesContext";
 import QuickReaction from "../QuickReaction";
+import {BundleContext, MessageCode} from "../../../context/BundleContext";
 
 interface ChatInputProps {
     onSendMessage?: () => void,
@@ -17,6 +18,8 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
     const cefQueryService = useRef(CefQueryService.instance);
     const {widgetMessage} = useContext(MessagesContext);
     const [message, setMessage] = useState("");
+
+    const {messages} = useContext(BundleContext);
 
     const sendMessage = useCallback(
         () => {
@@ -45,7 +48,11 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
                 </div>
             )}
             <div className={styles.inputContainer}>
-                <TextInput value={message} onChange={setMessage} placeholder={"Sende eine Nachricht"} onEnter={sendMessage} maxRows={maxRows ?? 1}/>
+                <TextInput value={message}
+                           onChange={setMessage}
+                           placeholder={messages[MessageCode.send_a_message]}
+                           onEnter={sendMessage}
+                           maxRows={maxRows ?? 1}/>
                 <div className={styles.buttonContainer}>
                     <Button onClick={sendMessage} disabled={message === ""}>
                         <MaterialSymbol icon={"send"} size={16} color={"white"} />

@@ -1,6 +1,6 @@
 import React, {forwardRef, useMemo} from "react";
 import styles from "./Button.module.css";
-import {cls} from "../../cls";
+import {cls} from "../../util/cls";
 
 interface ButtonProps {
     onClick: () => void;
