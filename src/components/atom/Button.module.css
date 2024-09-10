@@ -1,31 +1,33 @@
 .regular {
-    border: 1px solid var(--dark-field-border);
+    border: 1px solid var(--field-border);
+    color: var(--text-default)
 }
 
 .regular:focus {
-    border: 1px solid var(--dark-default-bg);
+    border: 1px solid var(--default-bg);
 }
 
 .disabled {
-    border: 1px solid var(--dark-field-border-disabled);
-    color: var(--dark-text-disabled);
+    border: 1px solid var(--field-border-disabled);
+    color: var(--text-disabled);
 }
 
 .default {
-    background-color: var(--dark-active) !important;
-    border: 1px solid var(--dark-active);
+    background-color: var(--active) !important;
+    border: 1px solid var(--active);
+    color: white;
 }
 
 .default:focus {
-    border: 1px solid var(--dark-default-bg);
+    border: 1px solid var(--default-bg);
 }
 
 .button {
     padding: 0 var(--default-padding-l);
     min-height: var(--default-element-height);
-    background-color: var(--dark-default-bg);
+    min-width: 72px;
+    background-color: var(--default-bg);
     border-radius: var(--border-radius-m);
-    color: white;
 
     display: flex;
     justify-content: center;
@@ -40,5 +42,5 @@
 }
 
 .button:focus {
-    outline: 2px solid var(--dark-active);
+    outline: 2px solid var(--active);
 }

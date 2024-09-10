@@ -18,7 +18,7 @@
 
 .messageContainer {
     display: flex;
-    background-color: var(--dark-field-bg);
+    background-color: var(--chat-color);
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 var(--border-radius-xl);
     padding: var(--default-spacing);
     max-width: 100%;

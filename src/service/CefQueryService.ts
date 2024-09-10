@@ -2,7 +2,7 @@ import {
     CefQuery,
     CefQueryRequest,
     CefQueryType, InputChangedEventQuery,
-    InputQuery,
+    InputQuery, RequestColorSchemeQuery,
     RequestMessagesQuery,
     RequestToolWindowFocusQuery, ResetConversationQuery,
     WidgetInputQuery
@@ -78,10 +78,10 @@ class CefQueryService {
         this.queryRequest(query)
     }
 
-    public regenerateLastMessage() {
-        const query: ResetConversationQuery = {
-            queryType: CefQueryType.REGENERATE_LAST_MESSAGE,
-            type: "RegenerateLastMessageQuery"
+    public requestColorScheme() {
+        const query: RequestColorSchemeQuery = {
+            queryType: CefQueryType.REQUEST_COLOR_SCHEME,
+            type: "RequestColorSchemeQuery"
         }
 
         this.queryRequest(query)

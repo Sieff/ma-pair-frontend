@@ -1,5 +1,5 @@
 .lowlight > * {
-    color: var(--dark-text-disabled);
+    color: var(--text-disabled);
 }
 
 .markdownContainer {
@@ -61,7 +61,7 @@
     margin: 10px 0;
     border-radius: var(--border-radius);
 
-    border-left: 4px solid var(--dark-field-bg);
+    border-left: 4px solid var(--field-bg);
     padding-left: var(--default-spacing);
     font-style: italic;
 }
@@ -79,7 +79,7 @@
 /* Code */
 /* Stil für Inline-Code */
 .markdownContainer code {
-    background-color: var(--dark-code-accent);
+    background-color: var(--code-accent);
     border-radius: var(--border-radius);
     padding: 2px 4px;
     font-family: monospace;
@@ -87,8 +87,8 @@
 
 /* Stil für Block-Code */
 .markdownContainer pre {
-    background-color: var(--dark-dark-accent);
-    border: 1px solid var(--dark-code-accent);
+    background-color: var(--dark-accent);
+    border: 1px solid var(--code-accent);
     border-radius: var(--border-radius-l);
     padding: var(--default-spacing);
     overflow-x: auto;
@@ -98,7 +98,7 @@
 }
 
 .markdownContainer pre code {
-    background-color: var(--dark-dark-accent);
+    background-color: var(--dark-accent);
     padding: 0;
 }
 

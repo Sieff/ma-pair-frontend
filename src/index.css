@@ -1,7 +1,7 @@
 body {
   margin: 0;
 
-  background-color: var(--dark-default-bg);
+  background-color: var(--default-bg);
   display: flex;
   flex-direction: column;
 
@@ -28,13 +28,22 @@ body {
   --golden-ratio-small: 38%;
 
   /* Color styles */
-  --dark-default-bg: rgb(43, 45, 48);
-  --dark-dark-accent: rgb(30, 31, 34);
-  --dark-dark-accent-50: rgb(30, 31, 34, .5);
-  --dark-code-accent: rgb(63, 66, 70);
-  --dark-active: rgba(53, 116, 240, 1);
-  --dark-button-active: rgb(75, 76, 79);
-  --dark-button-hover: rgb(57, 59, 64);
+  --default-bg: rgb(43, 45, 48);
+  --dark-accent: rgb(30, 31, 34);
+  --dark-accent-50: rgb(30, 31, 34, .5);
+  --code-accent: rgb(63, 66, 70);
+  --active: rgba(53, 116, 240, 1);
+
+  --chat-color: rgba(76, 80, 82, 1);
+
+  --field-bg-disabled: rgba(60, 63, 65, 1);
+  --field-border-disabled: rgba(100, 100, 100, 1);
+  --field-border: rgb(78, 81, 87);
+  --field-bg: rgba(76, 80, 82, 1);
+  --text-error: rgba(255, 82, 97, 1);
+  --text-default: rgba(187, 187, 187, 1);
+  --text-disabled: rgba(119, 119, 119, 1);
+
 
   --i-j--text--default: rgba(0, 0, 0, 1);
   --i-j-text-disabled: rgba(140, 140, 140, 1);
@@ -130,20 +139,13 @@ body {
   --i-j-welcome-screen-background: rgba(255, 255, 255, 1);
   --i-j-popup-header: rgba(230, 230, 230, 1);
   --i-j-popup-hint: rgba(242, 242, 242, 1);
-  --dark-text-default: rgba(187, 187, 187, 1);
-  --dark-text-disabled: rgba(119, 119, 119, 1);
   --dark-text-selected: rgba(254, 254, 254, 1);
   --dark-text-link: rgba(88, 157, 246, 1);
   --dark-text-info-panel: rgba(140, 140, 140, 1);
   --dark-text-info-input: rgba(120, 120, 120, 1);
-  --dark-text-error: rgba(255, 82, 97, 1);
   --dark-text-success: rgba(80, 166, 97, 1);
   --dark-text-link-pressed: rgba(186, 111, 37, 1);
-  --dark-field-border: rgb(78, 81, 87);
-  --dark-field-bg: rgba(76, 80, 82, 1);
   --dark-field-border-focused: rgba(69, 106, 144, 1);
-  --dark-field-bg-disabled: rgba(60, 63, 65, 1);
-  --dark-field-border-disabled: rgba(100, 100, 100, 1);
   --dark-field-combobox-button: rgba(60, 63, 65, 1);
   --dark-field-border-error: rgba(115, 69, 75, 1);
   --dark-focus-default: rgba(61, 97, 133, 1);
@@ -281,7 +283,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: var(--dark-text-default);
+  color: var(--text-default);
   box-sizing: border-box;
 }
 

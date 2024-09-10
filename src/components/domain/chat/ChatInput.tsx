@@ -2,12 +2,11 @@ import React, {useCallback, useContext, useEffect, useRef, useState} from "react
 import CefQueryService from "../../../service/CefQueryService";
 import styles from './ChatInput.module.css'
 import TextInput from "../../atom/TextInput";
-import Button from "../../atom/Button";
 import {MessageOrigin} from "../../../model/Message";
-import {MaterialSymbol} from "react-material-symbols";
 import {MessagesContext} from "../../../context/MessagesContext";
 import QuickReaction from "../QuickReaction";
 import {BundleContext, MessageCode} from "../../../context/BundleContext";
+import IconButton from "../../atom/IconButton";
 
 interface ChatInputProps {
     onSendMessage?: () => void,
@@ -54,9 +53,7 @@ const ChatInput: React.FC<ChatInputProps> = ({onSendMessage, maxRows}) => {
                            onEnter={sendMessage}
                            maxRows={maxRows ?? 1}/>
                 <div className={styles.buttonContainer}>
-                    <Button onClick={sendMessage} disabled={message === ""}>
-                        <MaterialSymbol icon={"send"} size={16} color={"white"} />
-                    </Button>
+                    <IconButton onClick={sendMessage} icon={"send"} disabled={message === ""} />
                 </div>
             </div>
         </div>

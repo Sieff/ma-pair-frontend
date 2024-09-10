@@ -3,10 +3,10 @@ import styles from './ChatHistory.module.css'
 import ChatMessage from "./ChatMessage";
 import {MessagesContext} from "../../../context/MessagesContext";
 import useOnScreen from "../../../hooks/useOnScreen";
-import {MaterialSymbol} from "react-material-symbols";
-import Button, {ButtonVariant} from "../../atom/Button";
+import {ButtonVariant} from "../../atom/Button";
 import MessageRelationService from "../../../service/MessageRelationService";
 import {AssistantMessage, MessageOrigin} from "../../../model/Message";
+import IconButton from "../../atom/IconButton";
 
 const ChatHistory: React.FC = () => {
     const messageRelationService = useRef<MessageRelationService>(MessageRelationService.instance)
@@ -66,9 +66,7 @@ const ChatHistory: React.FC = () => {
 
             {!bottomIsVisible && (
                 <div className={styles.toBottom}>
-                    <Button variant={ButtonVariant.REGULAR} onClick={scrollToBottom} >
-                        <MaterialSymbol icon={"arrow_downward"} size={16} color={"white"}/>
-                    </Button>
+                    <IconButton onClick={scrollToBottom} icon={"arrow_downward"} variant={ButtonVariant.REGULAR}/>
                 </div>
             )}
         </div>

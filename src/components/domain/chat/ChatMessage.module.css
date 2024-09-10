@@ -6,7 +6,7 @@
 
 .userMessage {
     padding: var(--default-spacing);
-    background-color: var(--dark-field-bg);
+    background-color: var(--chat-color);
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 var(--border-radius-xl);
     justify-self: end;
     max-width: 62%;
@@ -44,5 +44,5 @@
 .avatarIcon {
     height: 32px;
     border-radius: 10000px;
-    border: 2px solid var(--dark-field-bg);
+    border: 2px solid var(--code-accent);
 }

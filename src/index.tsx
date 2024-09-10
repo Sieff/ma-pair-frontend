@@ -9,6 +9,7 @@ import {MessagesContextProvider} from "./context/MessagesContext";
 import 'react-material-symbols/rounded';
 import {LogStatusContextProvider} from "./context/LogStatusContext";
 import {BundleContextProvider} from "./context/BundleContext";
+import ColorSchemeManager from "./components/ColorSchemeManager";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -42,6 +43,7 @@ root.render(
         <MessagesContextProvider>
             <LogStatusContextProvider>
                 <BundleContextProvider>
+                    <ColorSchemeManager />
                     <RouterProvider router={router} />
                 </BundleContextProvider>
             </LogStatusContextProvider>

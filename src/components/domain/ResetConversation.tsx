@@ -4,17 +4,15 @@ import Button, {ButtonVariant} from "../atom/Button";
 import styles from "./ResetConversation.module.css";
 import FocusTrap from "focus-trap-react";
 import CefQueryService from "../../service/CefQueryService";
-import {MaterialSymbol} from "react-material-symbols";
 import {BundleContext, MessageCode} from "../../context/BundleContext";
+import IconButton from "../atom/IconButton";
 
 const ResetConversation: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-            <Button onClick={() => {setShowModal(true)}} variant={ButtonVariant.REGULAR}>
-                <MaterialSymbol icon={"delete"} size={16} color={"white"} />
-            </Button>
+            <IconButton onClick={() => {setShowModal(true)}} icon={"delete"} variant={ButtonVariant.REGULAR}/>
             {showModal && createPortal(
                 <DeleteConversationModal onClose={() => setShowModal(false)} />,
                 document.body
