@@ -24,7 +24,7 @@ const IconButton: React.FC<IconButtonProps> = ({onClick, variant, disabled, icon
 
     return (
         <Button onClick={onClick} disabled={disabled} variant={variant}>
-            <MaterialSymbol icon={icon} size={16} color={iconColor} />
+            <MaterialSymbol icon={icon} size={20} color={iconColor} />
         </Button>
     )
 }

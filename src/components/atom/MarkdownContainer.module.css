@@ -61,7 +61,7 @@
     margin: 10px 0;
     border-radius: var(--border-radius);
 
-    border-left: 4px solid var(--field-bg);
+    border-left: 4px solid var(--chat-color);
     padding-left: var(--default-spacing);
     font-style: italic;
 }

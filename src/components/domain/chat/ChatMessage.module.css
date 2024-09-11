@@ -38,7 +38,8 @@
 }
 
 .avatarIconWidth {
-    width: 32px;
+    flex-basis: 32px;
+    flex-shrink: 0;
 }
 
 .avatarIcon {
