@@ -13,9 +13,9 @@ const AgentAvatar: React.FC<AgentAvatarProps> = ({emotion}) => {
                 return "/avatar-full-happy.png"
             case Emotion.SAD:
                 return "/avatar-full-sad.png"
-            case Emotion.NEUTRAL:
+            case Emotion.BORED:
                 return "/avatar-full-neutral.png"
-            case Emotion.CONFUSED:
+            case Emotion.PERPLEXED:
                 return "/avatar-full-confused.png"
             default:
                 return "/avatar-full-happy.png"

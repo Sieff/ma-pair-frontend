@@ -15,8 +15,17 @@ export interface AssistantMessage extends Message {
 }
 
 export enum Emotion {
-    NEUTRAL = "NEUTRAL",
     HAPPY = "HAPPY",
+    BORED = "BORED",
+    PERPLEXED = "PERPLEXED",
+    CONCENTRATED = "CONCENTRATED",
+    DEPRESSED = "DEPRESSED",
+    SURPRISED = "SURPRISED",
+    ANGRY = "ANGRY",
+    ANNOYED = "ANNOYED",
     SAD = "SAD",
-    CONFUSED = "CONFUSED",
+    FEARFUL = "FEARFUL",
+    ANTICIPATING = "ANTICIPATING",
+    TRUSTING = "TRUSTING",
+    DISGUSTED = "DISGUSTED"
 }
