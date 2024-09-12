@@ -7,23 +7,35 @@ interface AgentAvatarProps {
 }
 
 const AgentAvatar: React.FC<AgentAvatarProps> = ({emotion}) => {
-    const imageSource = useMemo(() => {
-        switch (emotion) {
-            case Emotion.HAPPY:
-                return "/avatar-full-happy.png"
-            case Emotion.SAD:
-                return "/avatar-full-sad.png"
-            case Emotion.BORED:
-                return "/avatar-full-neutral.png"
-            case Emotion.PERPLEXED:
-                return "/avatar-full-confused.png"
-            default:
-                return "/avatar-full-happy.png"
+    const imageMap: {[key in Emotion]: string} = useMemo(() => {
+        return {
+            ANGRY: "/avatar-full-angry.png",
+            ANNOYED: "/avatar-full-annoyed.png",
+            ANTICIPATING: "/avatar-full-anticipating.png",
+            BORED: "/avatar-full-bored.png",
+            CONCENTRATED: "/avatar-full-concentrated.png",
+            CONFUSED: "/avatar-full-confused.png",
+            DEPRESSED: "/avatar-full-depressed.png",
+            DISGUST: "/avatar-full-disgust.png",
+            FEARFUL: "/avatar-full-fearful.png",
+            HAPPY: "/avatar-full-happy.png",
+            PERPLEXED: "/avatar-full-perplexed.png",
+            SURPRISED: "/avatar-full-surprised.png",
+            SAD: "/avatar-full-sad.png"
         }
-    }, [emotion]);
+    }, [])
+
+
+    const imageSrc = useMemo(() => {
+        if (emotion) {
+            return imageMap[emotion];
+        } else {
+            return imageMap[Emotion.HAPPY]
+        }
+    }, [emotion, imageMap]);
 
     return (
-        <img className={styles.avatar} src={imageSource} alt={"Avatar of the assistant"} />
+        <img className={styles.avatar} src={imageSrc} alt={"Avatar of the assistant"} />
     )
 }
 

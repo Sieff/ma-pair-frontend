@@ -18,6 +18,7 @@ export enum Emotion {
     HAPPY = "HAPPY",
     BORED = "BORED",
     PERPLEXED = "PERPLEXED",
+    CONFUSED = "CONFUSED",
     CONCENTRATED = "CONCENTRATED",
     DEPRESSED = "DEPRESSED",
     SURPRISED = "SURPRISED",
@@ -26,6 +27,5 @@ export enum Emotion {
     SAD = "SAD",
     FEARFUL = "FEARFUL",
     ANTICIPATING = "ANTICIPATING",
-    TRUSTING = "TRUSTING",
-    DISGUSTED = "DISGUSTED"
+    DISGUST = "DISGUST"
 }
