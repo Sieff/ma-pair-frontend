@@ -25,6 +25,9 @@ export enum ThemeVariables {
     text_error = '--text-error',
     text_default = '--text-default',
     text_disabled = '--text-disabled',
+
+    scrollbar_track = '--scrollbar-track',
+    scrollbar_thumb = '--scrollbar-thumb',
 }
 
 const darkScheme: Dictionary<ThemeVariables, string> = {
@@ -42,6 +45,8 @@ const darkScheme: Dictionary<ThemeVariables, string> = {
     [ThemeVariables.text_error]: 'rgba(255, 82, 97, 1)',
     [ThemeVariables.text_default]: 'rgba(187, 187, 187, 1)',
     [ThemeVariables.text_disabled]: 'rgba(119, 119, 119, 1)',
+    [ThemeVariables.scrollbar_track]: 'rgba(255, 255, 255, 0.04)',
+    [ThemeVariables.scrollbar_thumb]: 'rgba(255, 255, 255, 0.16)',
 }
 
 const lightScheme: Dictionary<ThemeVariables, string> = {
@@ -59,6 +64,8 @@ const lightScheme: Dictionary<ThemeVariables, string> = {
     [ThemeVariables.text_error]: 'rgb(199, 34, 45)',
     [ThemeVariables.text_default]: 'rgb(0, 0, 0)',
     [ThemeVariables.text_disabled]: 'rgb(140, 140, 140)',
+    [ThemeVariables.scrollbar_track]: 'rgb(235, 236, 238)',
+    [ThemeVariables.scrollbar_thumb]: 'rgb(202, 202, 204)',
 }
 
 const schemas: Dictionary<ColorScheme, Dictionary<ThemeVariables, string>> = {

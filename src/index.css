@@ -44,6 +44,9 @@ body {
   --text-default: rgba(187, 187, 187, 1);
   --text-disabled: rgba(119, 119, 119, 1);
 
+  --scrollbar-track: rgba(255, 255, 255, 0.04);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.16);
+
 
   --i-j--text--default: rgba(0, 0, 0, 1);
   --i-j-text-disabled: rgba(140, 140, 140, 1);
@@ -305,7 +308,7 @@ img {
 }
 
 ::-webkit-scrollbar:hover {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--scrollbar-track);
 
 }
 
@@ -314,7 +317,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.16); /* Adjust color and transparency */
+  background-color: var(--scrollbar-thumb); /* Adjust color and transparency */
   border: 1px solid transparent;
   background-clip: content-box;
 }
