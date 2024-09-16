@@ -9,19 +9,19 @@ interface AgentAvatarProps {
 const AgentAvatar: React.FC<AgentAvatarProps> = ({emotion}) => {
     const imageMap: {[key in Emotion]: string} = useMemo(() => {
         return {
-            ANGRY: "/avatar-full-angry.png",
-            ANNOYED: "/avatar-full-annoyed.png",
-            ANTICIPATING: "/avatar-full-anticipating.png",
-            BORED: "/avatar-full-bored.png",
-            CONCENTRATED: "/avatar-full-concentrated.png",
-            CONFUSED: "/avatar-full-confused.png",
-            DEPRESSED: "/avatar-full-depressed.png",
-            DISGUST: "/avatar-full-disgust.png",
-            FEARFUL: "/avatar-full-fearful.png",
-            HAPPY: "/avatar-full-happy.png",
-            PERPLEXED: "/avatar-full-perplexed.png",
-            SURPRISED: "/avatar-full-surprised.png",
-            SAD: "/avatar-full-sad.png"
+            ANGRY: "/ma-pair-frontend/avatar-full-angry.png",
+            ANNOYED: "/ma-pair-frontend/avatar-full-annoyed.png",
+            ANTICIPATING: "/ma-pair-frontend/avatar-full-anticipating.png",
+            BORED: "/ma-pair-frontend/avatar-full-bored.png",
+            CONCENTRATED: "/ma-pair-frontend/avatar-full-concentrated.png",
+            CONFUSED: "/ma-pair-frontend/avatar-full-confused.png",
+            DEPRESSED: "/ma-pair-frontend/avatar-full-depressed.png",
+            DISGUST: "/ma-pair-frontend/avatar-full-disgust.png",
+            FEARFUL: "/ma-pair-frontend/avatar-full-fearful.png",
+            HAPPY: "/ma-pair-frontend/avatar-full-happy.png",
+            PERPLEXED: "/ma-pair-frontend/avatar-full-perplexed.png",
+            SURPRISED: "/ma-pair-frontend/avatar-full-surprised.png",
+            SAD: "/ma-pair-frontend/avatar-full-sad.png"
         }
     }, [])
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 import ChatWindow from "./components/domain/chat/ChatWindow";
 import WidgetWindow from "./components/domain/widget/WidgetWindow";
 import {MessagesContextProvider} from "./context/MessagesContext";
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <ChatWindow />,
