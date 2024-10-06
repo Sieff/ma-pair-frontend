@@ -9,6 +9,7 @@ export enum MessageOrigin {
 }
 
 export interface AssistantMessage extends Message {
+    phase: Phase,
     emotion: Emotion
     reactions: string[],
     proactive: boolean
@@ -28,4 +29,11 @@ export enum Emotion {
     FEARFUL = "FEARFUL",
     ANTICIPATING = "ANTICIPATING",
     DISGUST = "DISGUST"
+}
+
+export enum Phase {
+    CLARIFY = "CLARIFY",
+    IDEA = "IDEA",
+    DEVELOP = "DEVELOP",
+    IMPLEMENT = "IMPLEMENT",
 }
