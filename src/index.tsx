@@ -10,6 +10,7 @@ import 'react-material-symbols/rounded';
 import {LogStatusContextProvider} from "./context/LogStatusContext";
 import {BundleContextProvider} from "./context/BundleContext";
 import ColorSchemeManager from "./components/ColorSchemeManager";
+import {ProcessingStatusContextProvider} from "./context/ProcessingStatusContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -41,12 +42,14 @@ document.addEventListener('click', (event: MouseEvent) => {
 root.render(
     <React.StrictMode>
         <MessagesContextProvider>
-            <LogStatusContextProvider>
-                <BundleContextProvider>
-                    <ColorSchemeManager />
-                    <RouterProvider router={router} />
-                </BundleContextProvider>
-            </LogStatusContextProvider>
+            <ProcessingStatusContextProvider>
+                <LogStatusContextProvider>
+                    <BundleContextProvider>
+                        <ColorSchemeManager />
+                        <RouterProvider router={router} />
+                    </BundleContextProvider>
+                </LogStatusContextProvider>
+            </ProcessingStatusContextProvider>
         </MessagesContextProvider>
     </React.StrictMode>
 );

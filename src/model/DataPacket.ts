@@ -10,7 +10,8 @@ export enum DataPacketType {
     REQUEST_TEXT_INPUT_FOCUS = "REQUEST_TEXT_INPUT_FOCUS",
     UPDATE_LOG_STATUS = "UPDATE_LOG_STATUS",
     UPDATE_BUNDLE = "UPDATE_BUNDLE",
-    UPDATE_COLOR_SCHEME = "UPDATE_COLOR_SCHEME"
+    UPDATE_COLOR_SCHEME = "UPDATE_COLOR_SCHEME",
+    UPDATE_PROCESSING_STATUS = "UPDATE_PROCESSING_STATUS"
 }
 
 export interface UpdateMessagesPacket extends DataPacket {
@@ -27,6 +28,10 @@ export interface RequestTextInputFocusPacket extends DataPacket {
 
 export interface UpdateLogStatusPacket extends DataPacket {
     success: boolean
+}
+
+export interface UpdateProcessingStatusPacket extends DataPacket {
+    processing: boolean
 }
 
 export interface UpdateBundlePacket extends DataPacket {

@@ -5,12 +5,15 @@ import {MessagesContext} from "../../../context/MessagesContext";
 import useOnScreen from "../../../hooks/useOnScreen";
 import {ButtonVariant} from "../../atom/Button";
 import MessageRelationService from "../../../service/MessageRelationService";
-import {AssistantMessage, MessageOrigin} from "../../../model/Message";
+import {AssistantMessage, Emotion, MessageOrigin, Phase} from "../../../model/Message";
 import IconButton from "../../atom/IconButton";
+import {ProcessingStatusContext} from "../../../context/ProcessingStatusContext";
+import MessageRelation from "../../../model/MessageRelation";
 
 const ChatHistory: React.FC = () => {
     const messageRelationService = useRef<MessageRelationService>(MessageRelationService.instance)
     const {messages} = useContext(MessagesContext);
+    const {processing} = useContext(ProcessingStatusContext);
 
     const lastElement = useRef<HTMLDivElement | null>(null)
     const messagesBottomRef = useRef<HTMLDivElement | null>(null)
@@ -33,19 +36,30 @@ const ChatHistory: React.FC = () => {
             return;
         }
 
-        const lastMessage = messages[messages.length - 1]
-        if (lastMessage.origin === MessageOrigin.AGENT) {
-            if ((lastMessage as AssistantMessage).proactive) {
-                return
-            }
+        if (processing) {
+            scrollToBottom()
+        } else {
+            scrollToLast()
         }
-
-        scrollToLast()
-    }, [messages]);
+    }, [messages, processing]);
 
     const messageRelations = useMemo(() => {
         return messageRelationService.current.getMessageRelations(messages)
     }, [messages]);
+
+    const processingMessage = {
+        origin: MessageOrigin.AGENT,
+        phase: Phase.CLARIFY,
+        message: "...",
+        emotion: Emotion.HAPPY,
+        reactions: [],
+        proactive: false
+    } as AssistantMessage
+
+    const processingMessageRelation = {
+        firstInBlock: true,
+        lastInSelfInitiatedBlock: true
+    } as MessageRelation
 
 
     return (
@@ -60,6 +74,9 @@ const ChatHistory: React.FC = () => {
                         }} />
                     </>
                 ))}
+                {processing && (
+                    <ChatMessage message={processingMessage} messageRelation={processingMessageRelation} isLast={true} />
+                )}
             </div>
 
             <div ref={messagesBottomRef} />
