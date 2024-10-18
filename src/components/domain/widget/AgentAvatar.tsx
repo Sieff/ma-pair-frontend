@@ -21,7 +21,8 @@ const AgentAvatar: React.FC<AgentAvatarProps> = ({emotion}) => {
             HAPPY: "avatar-full-happy.png",
             PERPLEXED: "avatar-full-perplexed.png",
             SURPRISED: "avatar-full-surprised.png",
-            SAD: "avatar-full-sad.png"
+            SAD: "avatar-full-sad.png",
+            JOY: "avatar-full-joy.png"
         }
     }, [])
 

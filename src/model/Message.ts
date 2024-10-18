@@ -28,7 +28,8 @@ export enum Emotion {
     SAD = "SAD",
     FEARFUL = "FEARFUL",
     ANTICIPATING = "ANTICIPATING",
-    DISGUST = "DISGUST"
+    DISGUST = "DISGUST",
+    JOY = "JOY"
 }
 
 export enum Phase {
