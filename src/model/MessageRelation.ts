@@ -1,4 +1,6 @@
 export default interface MessageRelation {
     firstInBlock: boolean,
-    lastInSelfInitiatedBlock: boolean
+    inLastBlock: boolean,
+    lastInSelfInitiatedBlock: boolean,
+    secondToLast: boolean,
 }

@@ -58,7 +58,9 @@ const ChatHistory: React.FC = () => {
 
     const processingMessageRelation = {
         firstInBlock: true,
-        lastInSelfInitiatedBlock: true
+        inLastBlock: true,
+        lastInSelfInitiatedBlock: true,
+        secondToLast: false
     } as MessageRelation
 
 

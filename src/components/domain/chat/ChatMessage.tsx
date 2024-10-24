@@ -1,9 +1,11 @@
-import React, {forwardRef} from "react";
+import React, {forwardRef, useContext} from "react";
 import {AssistantMessage, Message, MessageOrigin} from "../../../model/Message";
 import styles from './ChatMessage.module.css';
 import MarkdownContainer from "../../atom/MarkdownContainer";
 import MessageRelation from "../../../model/MessageRelation";
 import {cls} from "../../../util/cls";
+import AgentAvatar from "../widget/AgentAvatar";
+import {MessagesContext} from "../../../context/MessagesContext";
 
 interface ChatMessageProps {
     message: Message;
@@ -46,14 +48,19 @@ const UserMessage: React.FC<UserMessageProps> = ({message}) => {
 }
 
 const AgentMessage: React.FC<AssistantMessageProps> = ({message, messageRelation, isLast}) => {
+    const {widgetMessage} = useContext(MessagesContext);
 
     return (
         <div className={styles.agentMessageContainer}>
-            {messageRelation.firstInBlock ? (
-                <div className={cls(!isLast && styles.iconWrapper)}>
+            {messageRelation.firstInBlock && !isLast && !messageRelation.inLastBlock && (
+                <div className={cls(styles.iconWrapper)}>
                     <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
                 </div>
-            ) : (
+            )}
+            {isLast && (
+                <AgentAvatar emotion={widgetMessage?.emotion} />
+            )}
+            {((!messageRelation.firstInBlock && !isLast) || (!isLast && messageRelation.inLastBlock)) && (
                 <div className={styles.avatarIconWidth} />
             )}
             <div className={styles.textContainer}>

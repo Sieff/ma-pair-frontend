@@ -16,12 +16,16 @@ class MessageRelationService {
     }
 
     getMessageRelations(messages: Message[]): MessageRelation[] {
-        const firstInBlock: boolean[] = messages.map((message, index) => {
+        const firstInBlock: boolean[] = messages.map((message, index, self) => {
             if (index === 0) {
                 return true
             }
 
-            return message.origin !== messages[index - 1].origin
+            return message.origin.valueOf() !== self[index - 1].origin.valueOf()
+        })
+
+        const inLastBlock: boolean[] = messages.map((message, index, self) => {
+            return self.slice(index, self.length).every((afterwards) => afterwards.origin.valueOf() === message.origin.valueOf())
         })
 
         const lastInSelfInitiatedBlock: boolean[] = messages.map((message, index) => {
@@ -51,10 +55,12 @@ class MessageRelationService {
             return !nextMessage.proactive
         })
 
-        return messages.map((_, index) => {
+        return messages.map((_, index, self) => {
             return {
                 firstInBlock: firstInBlock[index],
-                lastInSelfInitiatedBlock: lastInSelfInitiatedBlock[index]
+                inLastBlock: inLastBlock[index],
+                lastInSelfInitiatedBlock: lastInSelfInitiatedBlock[index],
+                secondToLast: index === self.length - 2
             }
         })
     }
