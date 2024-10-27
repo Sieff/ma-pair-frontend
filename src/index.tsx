@@ -11,6 +11,7 @@ import {LogStatusContextProvider} from "./context/LogStatusContext";
 import {BundleContextProvider} from "./context/BundleContext";
 import ColorSchemeManager from "./components/ColorSchemeManager";
 import {ProcessingStatusContextProvider} from "./context/ProcessingStatusContext";
+import {StudyGroupContextProvider} from "./context/StudyGroupContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -45,8 +46,10 @@ root.render(
             <ProcessingStatusContextProvider>
                 <LogStatusContextProvider>
                     <BundleContextProvider>
-                        <ColorSchemeManager />
-                        <RouterProvider router={router} />
+                        <StudyGroupContextProvider>
+                            <ColorSchemeManager />
+                            <RouterProvider router={router} />
+                        </StudyGroupContextProvider>
                     </BundleContextProvider>
                 </LogStatusContextProvider>
             </ProcessingStatusContextProvider>

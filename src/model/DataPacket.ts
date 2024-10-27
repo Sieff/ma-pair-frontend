@@ -11,7 +11,8 @@ export enum DataPacketType {
     UPDATE_LOG_STATUS = "UPDATE_LOG_STATUS",
     UPDATE_BUNDLE = "UPDATE_BUNDLE",
     UPDATE_COLOR_SCHEME = "UPDATE_COLOR_SCHEME",
-    UPDATE_PROCESSING_STATUS = "UPDATE_PROCESSING_STATUS"
+    UPDATE_PROCESSING_STATUS = "UPDATE_PROCESSING_STATUS",
+    UPDATE_STUDY_GROUP = "UPDATE_STUDY_GROUP"
 }
 
 export interface UpdateMessagesPacket extends DataPacket {
@@ -40,4 +41,8 @@ export interface UpdateBundlePacket extends DataPacket {
 
 export interface UpdateColorSchemePacket extends DataPacket {
     scheme: string
+}
+
+export interface UpdateStudyGroup extends DataPacket {
+    studyGroup: number
 }

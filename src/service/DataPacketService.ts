@@ -10,6 +10,7 @@ class DataPacketService {
         UPDATE_BUNDLE: (_) => {},
         UPDATE_COLOR_SCHEME: (_) => {},
         UPDATE_PROCESSING_STATUS: (_) => {},
+        UPDATE_STUDY_GROUP: (_) => {},
     };
 
     private constructor() {
