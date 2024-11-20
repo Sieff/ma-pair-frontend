@@ -2,37 +2,37 @@ import React, {PropsWithChildren, useCallback, useEffect, useMemo, useRef, useSt
 import {
     DataPacketType,
     DataPacket,
-    UpdateLogStatusPacket
+    UpdatePluginStatusPacket
 } from "../model/DataPacket";
 import DataPacketService from "../service/DataPacketService";
 
 interface LogStatusContextValue {
-    success: boolean;
+    status: string;
 }
 
-export const LogStatusContext = React.createContext({success: true} as LogStatusContextValue);
+export const PluginStatusContext = React.createContext({status: ""} as LogStatusContextValue);
 
 
 export const LogStatusContextProvider: React.FC<PropsWithChildren> = ({children}) => {
-    const [success, setSuccess] = useState(true);
+    const [status, setStatus] = useState("");
     const contextValue = useMemo(() => {
-        return {success}
-    }, [success]);
+        return {status}
+    }, [status]);
 
     const dataPacketService = useRef(DataPacketService.instance);
 
     const updateLogStatus = useCallback(
         (packet: DataPacket) => {
-            setSuccess((packet as UpdateLogStatusPacket).success);
+            setStatus((packet as UpdatePluginStatusPacket).status);
         },
-        [setSuccess]
+        [setStatus]
     );
 
     useEffect(() => {
-        dataPacketService.current.setCallback(DataPacketType.UPDATE_LOG_STATUS, (packet) => {updateLogStatus(packet)});
+        dataPacketService.current.setCallback(DataPacketType.UPDATE_PLUGIN_STATUS, (packet) => {updateLogStatus(packet)});
     }, [updateLogStatus]);
 
-    return (<LogStatusContext.Provider value={contextValue}>
+    return (<PluginStatusContext.Provider value={contextValue}>
         {children}
-    </LogStatusContext.Provider>)
+    </PluginStatusContext.Provider>)
 }

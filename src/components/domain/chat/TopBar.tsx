@@ -2,24 +2,21 @@ import React, {useContext} from "react";
 import Divider from "../../atom/Divider";
 import styles from "./TopBar.module.css";
 import ResetConversation from "../ResetConversation";
-import {LogStatusContext} from "../../../context/LogStatusContext";
-import {BundleContext, MessageCode} from "../../../context/BundleContext";
+import {PluginStatusContext} from "../../../context/PluginStatusContext";
 
 const TopBar: React.FC = () => {
-    const {success} = useContext(LogStatusContext);
-
-    const {messages} = useContext(BundleContext);
+    const {status} = useContext(PluginStatusContext);
 
     return (
         <>
             <Divider />
 
             <div className={styles.topBar}>
-                {success ? (
+                {!status ? (
                     <div />
                 ) : (
                     <div className={styles.error}>
-                        {messages[MessageCode.log_deactivated]}
+                        {status}
                     </div>
                 )}
                 <ResetConversation />
