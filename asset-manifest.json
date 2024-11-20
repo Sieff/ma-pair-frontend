@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ma-pair-frontend/static/css/main.15655f73.css",
-    "main.js": "/ma-pair-frontend/static/js/main.fa1df5cf.js",
+    "main.js": "/ma-pair-frontend/static/js/main.2ede10b5.js",
     "static/js/453.704d3a04.chunk.js": "/ma-pair-frontend/static/js/453.704d3a04.chunk.js",
     "static/media/material-symbols-rounded.woff2": "/ma-pair-frontend/static/media/material-symbols-rounded.7e6c57567e2ab620ec78.woff2",
     "index.html": "/ma-pair-frontend/index.html",
     "main.15655f73.css.map": "/ma-pair-frontend/static/css/main.15655f73.css.map",
-    "main.fa1df5cf.js.map": "/ma-pair-frontend/static/js/main.fa1df5cf.js.map",
+    "main.2ede10b5.js.map": "/ma-pair-frontend/static/js/main.2ede10b5.js.map",
     "453.704d3a04.chunk.js.map": "/ma-pair-frontend/static/js/453.704d3a04.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.15655f73.css",
-    "static/js/main.fa1df5cf.js"
+    "static/js/main.2ede10b5.js"
   ]
 }
