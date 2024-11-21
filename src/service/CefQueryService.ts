@@ -2,7 +2,7 @@ import {
     CefQuery,
     CefQueryRequest,
     CefQueryType, InputChangedEventQuery,
-    InputQuery, RequestColorSchemeQuery,
+    InputQuery, QuickReactionInputQuery, RequestColorSchemeQuery,
     RequestMessagesQuery,
     RequestToolWindowFocusQuery, ResetConversationQuery,
     WidgetInputQuery
@@ -37,6 +37,17 @@ class CefQueryService {
             queryType: CefQueryType.WIDGET_INPUT,
             message,
             type: "WidgetInputQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
+    public sendQuickReactionInput(message: Message) {
+        const query: QuickReactionInputQuery = {
+            queryType: CefQueryType.QUICK_REACTION_INPUT,
+            quickReaction: true,
+            message,
+            type: "QuickReactionInputQuery"
         }
 
         this.queryRequest(query)

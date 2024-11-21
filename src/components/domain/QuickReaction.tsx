@@ -14,13 +14,9 @@ const QuickReaction: React.FC<React.PropsWithChildren<QuickReactionsProps>> = ({
 
     const sendMessage = useCallback(
         (message: string) => {
-            if (widget) {
-                cefQueryService.current.sendWidgetInput({origin: MessageOrigin.USER, message: message})
-            } else {
-                cefQueryService.current.sendInput({origin: MessageOrigin.USER, message: message})
-            }
+            cefQueryService.current.sendQuickReactionInput({origin: MessageOrigin.USER, message: message})
         },
-        [widget],
+        [],
     );
     
     

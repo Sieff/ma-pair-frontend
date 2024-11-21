@@ -7,12 +7,13 @@ export interface CefQueryRequest {
 export interface CefQuery {
     queryType: CefQueryType
     type: "InputQuery" | "WidgetInputQuery" | "RequestToolWindowFocusQuery" | "RequestMessagesQuery" |
-        "InputChangedEventQuery" | "ResetConversationQuery" | "RequestColorSchemeQuery"
+        "InputChangedEventQuery" | "ResetConversationQuery" | "RequestColorSchemeQuery" | "QuickReactionInputQuery"
 }
 
 export enum CefQueryType {
     INPUT = "INPUT",
     WIDGET_INPUT = "WIDGET_INPUT",
+    QUICK_REACTION_INPUT = "QUICK_REACTION_INPUT",
     REQUEST_TOOL_WINDOW_FOCUS = "REQUEST_TOOL_WINDOW_FOCUS",
     REQUEST_MESSAGES = "REQUEST_MESSAGES",
     RESET_CONVERSATION = "RESET_CONVERSATION",
@@ -26,6 +27,10 @@ export interface InputQuery extends CefQuery {
 
 export interface WidgetInputQuery extends InputQuery {
 
+}
+
+export interface QuickReactionInputQuery extends InputQuery {
+    quickReaction: boolean
 }
 
 export interface RequestToolWindowFocusQuery extends CefQuery {
