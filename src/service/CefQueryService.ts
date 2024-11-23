@@ -7,7 +7,7 @@ import {
     RequestToolWindowFocusQuery, ResetConversationQuery,
     WidgetInputQuery
 } from "../model/CefQuery";
-import {Message} from "../model/Message";
+import {Message, QuickReactionMessage} from "../model/Message";
 
 class CefQueryService {
     private static _instance: CefQueryService;
@@ -42,10 +42,9 @@ class CefQueryService {
         this.queryRequest(query)
     }
 
-    public sendQuickReactionInput(message: Message) {
+    public sendQuickReactionInput(message: QuickReactionMessage) {
         const query: QuickReactionInputQuery = {
             queryType: CefQueryType.QUICK_REACTION_INPUT,
-            quickReaction: true,
             message,
             type: "QuickReactionInputQuery"
         }

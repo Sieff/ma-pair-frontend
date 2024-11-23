@@ -1,4 +1,4 @@
-import {Message} from "./Message";
+import {Message, QuickReactionMessage} from "./Message";
 
 export interface CefQueryRequest {
     request: string
@@ -29,8 +29,8 @@ export interface WidgetInputQuery extends InputQuery {
 
 }
 
-export interface QuickReactionInputQuery extends InputQuery {
-    quickReaction: boolean
+export interface QuickReactionInputQuery extends CefQuery {
+    message: QuickReactionMessage
 }
 
 export interface RequestToolWindowFocusQuery extends CefQuery {

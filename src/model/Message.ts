@@ -3,6 +3,10 @@ export interface Message {
     message: string;
 }
 
+export interface QuickReactionMessage extends Message {
+    quickReaction: boolean,
+}
+
 export enum MessageOrigin {
     AGENT = "AGENT",
     USER = "USER"
