@@ -7,7 +7,8 @@ export interface CefQueryRequest {
 export interface CefQuery {
     queryType: CefQueryType
     type: "InputQuery" | "WidgetInputQuery" | "RequestToolWindowFocusQuery" | "RequestMessagesQuery" |
-        "InputChangedEventQuery" | "ResetConversationQuery" | "RequestColorSchemeQuery" | "QuickReactionInputQuery"
+        "InputChangedEventQuery" | "ResetConversationQuery" | "RequestColorSchemeQuery" | "QuickReactionInputQuery" |
+        "RequestStudyGroupQuery"
 }
 
 export enum CefQueryType {
@@ -19,6 +20,7 @@ export enum CefQueryType {
     RESET_CONVERSATION = "RESET_CONVERSATION",
     INPUT_CHANGED_EVENT = "INPUT_CHANGED_EVENT",
     REQUEST_COLOR_SCHEME = "REQUEST_COLOR_SCHEME",
+    REQUEST_STUDY_GROUP = "REQUEST_STUDY_GROUP",
 }
 
 export interface InputQuery extends CefQuery {

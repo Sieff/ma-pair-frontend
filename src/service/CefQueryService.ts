@@ -61,6 +61,15 @@ class CefQueryService {
         this.queryRequest(query)
     }
 
+    public requestStudyGroup() {
+        const query: RequestMessagesQuery = {
+            queryType: CefQueryType.REQUEST_STUDY_GROUP,
+            type: "RequestStudyGroupQuery"
+        }
+
+        this.queryRequest(query)
+    }
+
     public requestToolWindowFocus() {
         const query: RequestToolWindowFocusQuery = {
             queryType: CefQueryType.REQUEST_TOOL_WINDOW_FOCUS,

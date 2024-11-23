@@ -8,6 +8,7 @@ const WidgetWindow: React.FC = () => {
 
     useEffect(() => {
         cefQueryService.current.requestMessages()
+        cefQueryService.current.requestStudyGroup()
     }, []);
 
     return (
