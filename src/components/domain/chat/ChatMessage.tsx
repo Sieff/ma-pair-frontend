@@ -55,7 +55,7 @@ const AgentMessage: React.FC<AssistantMessageProps> = ({message, messageRelation
     return (
         <div className={styles.agentMessageContainer}>
             {messageRelation.firstInBlock && !(messageRelation.inLastBlock && studyGroup === 2) && (
-                <div className={cls(styles.iconWrapper)}>
+                <div className={cls(!isLast && styles.iconWrapper)}>
                     <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
                 </div>
             )}
