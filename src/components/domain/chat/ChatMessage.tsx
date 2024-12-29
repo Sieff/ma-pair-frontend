@@ -54,16 +54,32 @@ const AgentMessage: React.FC<AssistantMessageProps> = ({message, messageRelation
 
     return (
         <div className={styles.agentMessageContainer}>
-            {messageRelation.firstInBlock && !(messageRelation.inLastBlock && studyGroup === 2) && (
-                <div className={cls(!isLast && styles.iconWrapper)}>
-                    <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
-                </div>
+            {studyGroup !== 2 && (
+                <>
+                    {messageRelation.firstInBlock && (
+                        <div className={cls(!isLast && styles.iconWrapper)}>
+                            <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"baseline-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
+                        </div>
+                    )}
+                    {!messageRelation.firstInBlock && (
+                        <div className={styles.avatarIconWidth} />
+                    )}
+                </>
             )}
-            {isLast && studyGroup === 2 && (
-                <AgentAvatar emotion={widgetMessage?.emotion} />
-            )}
-            {((!messageRelation.firstInBlock && !(isLast && studyGroup === 2)) || (messageRelation.firstInBlock && studyGroup === 2 && messageRelation.inLastBlock && !isLast)) && (
-                <div className={styles.avatarIconWidth} />
+            {studyGroup === 2 && (
+                <>
+                    {messageRelation.firstInBlock && !messageRelation.inLastBlock && (
+                        <div className={cls(!isLast && styles.iconWrapper)}>
+                            <img className={cls(styles.avatarIcon, styles.avatarIconWidth)} src={"avatar-icon.png"} alt={"Chat message avatar icon of the Assistant"}></img>
+                        </div>
+                    )}
+                    {isLast && (
+                        <AgentAvatar emotion={widgetMessage?.emotion} />
+                    )}
+                    {((!messageRelation.firstInBlock && !isLast) || (messageRelation.firstInBlock && messageRelation.inLastBlock && !isLast)) && (
+                        <div className={styles.avatarIconWidth} />
+                    )}
+                </>
             )}
             <div className={styles.textContainer}>
                 <MarkdownContainer text={message.message} lowlight={message.proactive && !messageRelation.lastInSelfInitiatedBlock} />
