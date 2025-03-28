@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ma-pair-frontend/static/css/main.3bab518a.css",
-    "main.js": "/ma-pair-frontend/static/js/main.d4721ea8.js",
+    "main.css": "/ma-pair-frontend/static/css/main.7c79447e.css",
+    "main.js": "/ma-pair-frontend/static/js/main.c2b530b4.js",
     "static/js/453.704d3a04.chunk.js": "/ma-pair-frontend/static/js/453.704d3a04.chunk.js",
     "static/media/material-symbols-rounded.woff2": "/ma-pair-frontend/static/media/material-symbols-rounded.7e6c57567e2ab620ec78.woff2",
     "index.html": "/ma-pair-frontend/index.html",
-    "main.3bab518a.css.map": "/ma-pair-frontend/static/css/main.3bab518a.css.map",
-    "main.d4721ea8.js.map": "/ma-pair-frontend/static/js/main.d4721ea8.js.map",
+    "main.7c79447e.css.map": "/ma-pair-frontend/static/css/main.7c79447e.css.map",
+    "main.c2b530b4.js.map": "/ma-pair-frontend/static/js/main.c2b530b4.js.map",
     "453.704d3a04.chunk.js.map": "/ma-pair-frontend/static/js/453.704d3a04.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3bab518a.css",
-    "static/js/main.d4721ea8.js"
+    "static/css/main.7c79447e.css",
+    "static/js/main.c2b530b4.js"
   ]
 }
