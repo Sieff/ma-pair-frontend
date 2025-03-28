@@ -12,6 +12,11 @@
     min-width: var(--min-width);
 }
 
+.bottomAnchor {
+    height: 1px;
+    margin-top: -1px;
+}
+
 .messagesContainer {
     display: flex;
     flex-direction: column;

@@ -81,7 +81,7 @@ const ChatHistory: React.FC = () => {
                 )}
             </div>
 
-            <div ref={messagesBottomRef} />
+            <div className={styles.bottomAnchor} ref={messagesBottomRef} />
 
             {!bottomIsVisible && (
                 <div className={styles.toBottom}>
